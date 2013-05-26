@@ -13,22 +13,50 @@ public class IssueListDto {
     /**
      * 課題一覧のリスト
      */
-    private List<IssueDto> issueList = new ArrayList<IssueDto>();
+    private List<IssueDto> issueList;
+
+    /**
+     * 空の <code>IssueListDto</code> を構築します。
+     */
+    public IssueListDto() {
+        this.issueList = new ArrayList<IssueDto>();
+    }
+
+    /**
+     * 指定された課題DTOのリストを元に、 <code>IssueListDto</code> を構築します。
+     *
+     * @param 課題DTOのリスト
+     */
+    public IssueListDto(List<IssueDto> issueList) {
+        this.issueList = new ArrayList<IssueDto>(issueList);
+    }
 
     /**
      * 指定した課題番号の課題を取得します。
      *
-     * @param issueCode 課題番号
+     * @param issueId 課題番号
      * @return 課題DTO
      */
-    public IssueDto getIssue(Long issueCode) {
-
-        // this.issueList.get(index);
+    public IssueDto getIssue(int issueId) {
+        for (IssueDto issue : this.issueList) {
+            if (issue.getIssueId() == issueId) {
+                return issue;
+            }
+        }
         return null;
     }
 
     /**
-     * 指定した課題を課題一覧に追加します。
+     * 課題DTOのリストを取得します。
+     *
+     * @return 課題DTOのリスト
+     */
+    public List<IssueDto> getIssueList() {
+        return new ArrayList<IssueDto>(this.issueList);
+    }
+
+    /**
+     * 指定した課題DTOを課題一覧に追加します。
      *
      * @param issue 課題DTO
      */

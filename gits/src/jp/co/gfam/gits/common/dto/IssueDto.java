@@ -134,198 +134,198 @@ public class IssueDto {
     }
 
     /**
-     * �������擾���܂��B
+     * 説明を取得します。
      *
-     * @return ����
+     * @return 説明
      */
     public String getDiscription() {
         return this.discription;
     }
 
     /**
-     * ������ݒ肵�܂��B
+     * 説明を設定します。
      *
-     * @param discription ����
+     * @param discription 説明
      */
     public void setDiscription(String discription) {
         this.discription = discription;
     }
 
     /**
-     * �N�[��ID���擾���܂��B
+     * 起票者IDを取得します。
      *
-     * @return �N�[��ID
+     * @return 起票者ID
      */
     public int getRegistrantId() {
         return this.registrantId;
     }
 
     /**
-     * �N�[��ID��ݒ肵�܂��B
+     * 起票者IDを設定します。
      *
-     * @param registrantId �N�[��ID
+     * @param registrantId 起票者ID
      */
     public void setRegistrantId(int registrantId) {
         this.registrantId = registrantId;
     }
 
     /**
-     * �N�[����擾���܂��B
+     * 起票日を取得します。
      *
-     * @return �N�[��
+     * @return 起票日
      */
     public Date getRegisterdDate() {
         return this.registerDate;
     }
 
     /**
-     * �N�[���ݒ肵�܂��B
+     * 起票日を設定します。
      *
-     * @param regsterDate �N�[��
+     * @param regsterDate 起票日
      */
     public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
     }
 
     /**
-     * �S����ID���擾���܂��B
+     * 担当者IDを取得します。
      *
-     * @return �S����ID
+     * @return 担当者ID
      */
     public int getRepresentativeId() {
         return this.representativeId;
     }
 
     /**
-     * �S����ID��ݒ肵�܂��B
+     * 担当者IDを設定します。
      *
-     * @param representativeId �S����ID
+     * @param representativeId 担当者ID
      */
     public void setRepresentativeId(int representativeId) {
         this.representativeId = representativeId;
     }
 
     /**
-     * �D��x���擾���܂��B
+     * 優先度を取得します。
      *
-     * @return �D��x
+     * @return 優先度
      */
     public String getPriority() {
         return this.priority;
     }
 
     /**
-     * �D��x��ݒ肵�܂��B
+     * 優先度を設定します。
      *
-     * @param priority �D��x
+     * @param priority 優先度
      */
     public void setPriority(String priority) {
         this.priority = priority;
     }
 
     /**
-     * �J�n����擾���܂��B
+     * 開始日を取得します。
      *
-     * @return �J�n��
+     * @return 開始日
      */
     public Date getStartDate() {
         return this.startDate;
     }
 
     /**
-     * �J�n���ݒ肵�܂��B
+     * 開始日を設定します。
      *
-     * @param startDate �J�n��
+     * @param startDate 開始日
      */
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
     /**
-     * �I������擾���܂��B
+     * 終了日を取得します。
      *
-     * @return �I����
+     * @return 終了日
      */
     public Date getEndDate() {
         return this.endDate;
     }
 
     /**
-     * �I�����ݒ肵�܂��B
+     * 終了日を設定します。
      *
-     * @param endDate �I����
+     * @param endDate 終了日
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
     /**
-     * �i�����擾���܂��B
+     * 進捗を取得します。
      *
-     * @return �i��
+     * @return 進捗
      */
     public short getProgress() {
         return this.progress;
     }
 
     /**
-     * �i����ݒ肵�܂��B
+     * 進捗を設定します。
      *
-     * @param progress �i��
+     * @param progress 進捗
      */
     public void setProgress(short progress) {
         this.progress = progress;
     }
 
     /**
-     * �H�����擾���܂��B
+     * 工数を取得します。
      *
-     * @return �H��
+     * @return 工数
      */
     public short getCost() {
         return this.cost;
     }
 
     /**
-     * �H����ݒ肵�܂��B
+     * 工数を設定します。
      *
-     * @param cost �H��
+     * @param cost 工数
      */
     public void setCost(short cost) {
         this.cost = cost;
     }
 
     /**
-     * �X�e�[�^�X���擾���܂��B
+     * ステータスを取得します。
      *
-     * @return �X�e�[�^�X
+     * @return ステータス
      */
     public String getStatus() {
         return this.status;
     }
 
     /**
-     * �X�e�[�^�X��ݒ肵�܂��B
+     * ステータスを設定します。
      *
-     * @param status �X�e�[�^�X
+     * @param status ステータス
      */
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
-     * �X�V����擾���܂��B
+     * 更新日時を取得します。
      *
-     * @return �X�V��
+     * @return 更新日時
      */
     public Date getUpdateDateTime() {
         return this.updateDateTime;
     }
 
     /**
-     * �X�V���ݒ肵�܂��B
+     * 更新日時を設定します。
      *
-     * @param updateDateTime �X�V��
+     * @param updateDateTime 更新日時
      */
     public void setUpdateDateTime(Date updateDateTime) {
         this.updateDateTime = updateDateTime;

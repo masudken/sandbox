@@ -1,12 +1,13 @@
 package jp.co.gfam.gits.business.service;
 
 import jp.co.gfam.gits.common.criteria.IssueCriteria;
+import jp.co.gfam.gits.common.dto.IssueDto;
 import jp.co.gfam.gits.common.dto.IssueListDto;
 
 /**
- * �ۑ�Ǘ��T�[�r�X
+ * このクラスは課題管理のサービスを提供します。
  *
- * @author kenichi
+ * @author Kenichi Masuda
  */
 public interface IssueManagementService {
 

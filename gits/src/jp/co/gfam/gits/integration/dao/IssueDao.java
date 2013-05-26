@@ -6,7 +6,7 @@ import jp.co.gfam.gits.common.criteria.IssueCriteria;
 import jp.co.gfam.gits.common.entity.Issue;
 
 /**
- * このクラスは課題データへのアクセス機能を提供するインターフェースです。
+ * 課題情報へのアクセス機能を提供するインターフェースです。
  *
  * @author Kenichi Masuda
  */
