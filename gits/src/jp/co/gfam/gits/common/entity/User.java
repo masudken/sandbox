@@ -12,7 +12,7 @@ public class User {
     /**
      * ユーザID
      */
-    private int userId;
+    private Integer userId;
 
     /**
      * ユーザ名
@@ -54,7 +54,7 @@ public class User {
      *
      * @return ユーザID
      */
-    public int getUserId() {
+    public Integer getUserId() {
         return this.userId;
     }
 
@@ -63,7 +63,7 @@ public class User {
      *
      * @param userId ユーザID
      */
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

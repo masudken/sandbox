@@ -12,7 +12,7 @@ public class Issue {
     /**
      * 課題番号
      */
-    private int issueId;
+    private Integer issueId;
 
     /**
      * 課題種別
@@ -32,7 +32,7 @@ public class Issue {
     /**
      * 起票ID
      */
-    private int registrantId;
+    private Integer registrantId;
 
     /**
      * 起票日
@@ -42,7 +42,7 @@ public class Issue {
     /**
      * 担当者ID
      */
-    private int representativeId;
+    private Integer representativeId;
 
     /**
      * 優先度
@@ -62,12 +62,12 @@ public class Issue {
     /**
      * 進捗
      */
-    private short progress;
+    private Short progress;
 
     /**
      * 工数
      */
-    private short cost;
+    private Short cost;
 
     /**
      * ステータス
@@ -84,7 +84,7 @@ public class Issue {
      *
      * @return 課題番号
      */
-    public int getIssueId() {
+    public Integer getIssueId() {
         return this.issueId;
     }
 
@@ -93,7 +93,7 @@ public class Issue {
      *
      * @param issueId 課題番号
      */
-    public void setIssueId(int issueId) {
+    public void setIssueId(Integer issueId) {
         this.issueId = issueId;
     }
 
@@ -156,7 +156,7 @@ public class Issue {
      *
      * @return 起票者ID
      */
-    public int getRegistrantId() {
+    public Integer getRegistrantId() {
         return this.registrantId;
     }
 
@@ -165,7 +165,7 @@ public class Issue {
      *
      * @param registrantId 起票者ID
      */
-    public void setRegistrantId(int registrantId) {
+    public void setRegistrantId(Integer registrantId) {
         this.registrantId = registrantId;
     }
 
@@ -192,7 +192,7 @@ public class Issue {
      *
      * @return 担当者ID
      */
-    public int getRepresentativeId() {
+    public Integer getRepresentativeId() {
         return this.representativeId;
     }
 
@@ -201,7 +201,7 @@ public class Issue {
      *
      * @param representativeId 担当者ID
      */
-    public void setRepresentativeId(int representativeId) {
+    public void setRepresentativeId(Integer representativeId) {
         this.representativeId = representativeId;
     }
 
@@ -264,7 +264,7 @@ public class Issue {
      *
      * @return 進捗
      */
-    public short getProgress() {
+    public Short getProgress() {
         return this.progress;
     }
 
@@ -273,7 +273,7 @@ public class Issue {
      *
      * @param progress 進捗
      */
-    public void setProgress(short progress) {
+    public void setProgress(Short progress) {
         this.progress = progress;
     }
 
@@ -282,7 +282,7 @@ public class Issue {
      *
      * @return 工数
      */
-    public short getCost() {
+    public Short getCost() {
         return this.cost;
     }
 
@@ -291,7 +291,7 @@ public class Issue {
      *
      * @param cost 工数
      */
-    public void setCost(short cost) {
+    public void setCost(Short cost) {
         this.cost = cost;
     }
 

@@ -1,5 +1,6 @@
 package jp.co.gfam.gits.integration.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import jp.co.gfam.gits.common.criteria.UserCriteria;
@@ -17,6 +18,7 @@ public interface UserDao {
      *
      * @param criteria 検索条件
      * @return 課題のリスト
+     * @throws {@code SQLException} SQL実行例外
      */
-    public List<User> search(UserCriteria criteria);
+    public List<User> search(UserCriteria criteria) throws SQLException;
 }

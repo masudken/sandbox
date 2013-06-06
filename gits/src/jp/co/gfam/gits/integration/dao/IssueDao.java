@@ -1,5 +1,6 @@
 package jp.co.gfam.gits.integration.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import jp.co.gfam.gits.common.criteria.IssueCriteria;
@@ -32,5 +33,5 @@ public interface IssueDao {
      * @param criteria 検索条件
      * @return 課題のリスト
      */
-    public List<Issue> search(IssueCriteria criteria);
+    public List<Issue> search(IssueCriteria criteria) throws SQLException;
 }
