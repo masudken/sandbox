@@ -1,8 +1,8 @@
 package jp.co.gfam.gits.business.service;
 
-import jp.co.gfam.gits.common.criteria.IssueCriteria;
 import jp.co.gfam.gits.common.dto.IssueDto;
 import jp.co.gfam.gits.common.dto.IssueListDto;
+import jp.co.gfam.gits.common.dto.IssueSearchConditionDto;
 
 /**
  * このクラスは課題管理のサービスを提供します。
@@ -11,7 +11,7 @@ import jp.co.gfam.gits.common.dto.IssueListDto;
  */
 public interface IssueManagementService {
 
-    public IssueListDto searchIssues(IssueCriteria criteria);
+    public IssueListDto searchIssues(IssueSearchConditionDto condition);
 
     public void registerIssue(IssueDto issue);
 

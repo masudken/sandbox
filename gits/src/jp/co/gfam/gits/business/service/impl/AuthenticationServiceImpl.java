@@ -3,17 +3,19 @@ package jp.co.gfam.gits.business.service.impl;
 import java.sql.SQLException;
 import java.util.List;
 
+import jp.co.gfam.gits.business.model.User;
 import jp.co.gfam.gits.business.service.AuthenticationService;
-import jp.co.gfam.gits.common.criteria.UserCriteria;
-import jp.co.gfam.gits.common.entity.User;
+import jp.co.gfam.gits.integration.dao.UserCriteria;
 import jp.co.gfam.gits.integration.dao.UserDao;
+import jp.co.gfam.gits.integration.dao.impl.UserDaoImpl;
 
 /**
  * @author Kenichi Masuda
  */
 public class AuthenticationServiceImpl implements AuthenticationService {
 
-    private UserDao userDao = null;
+    // TODO DIで設定できるようにしたいが、とりあえず直接インスタンス生成
+    private UserDao _userDao = new UserDaoImpl();
 
     /*
      * (非 Javadoc)
@@ -32,7 +34,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         List<User> users = null;
         try {
             // ユーザー情報の取得
-            users = userDao.search(criteria);
+            users = _userDao.search(criteria);
         } catch (SQLException se) {
 
         }
@@ -51,5 +53,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         // TODO 自動生成されたメソッド・スタブ
         return false;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        _userDao = userDao;
     }
 }

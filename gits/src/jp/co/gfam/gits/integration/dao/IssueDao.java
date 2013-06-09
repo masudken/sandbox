@@ -3,8 +3,7 @@ package jp.co.gfam.gits.integration.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import jp.co.gfam.gits.common.criteria.IssueCriteria;
-import jp.co.gfam.gits.common.entity.Issue;
+import jp.co.gfam.gits.business.model.Issue;
 
 /**
  * 課題情報へのアクセス機能を提供するインターフェースです。

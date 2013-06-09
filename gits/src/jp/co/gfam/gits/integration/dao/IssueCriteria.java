@@ -1,13 +1,13 @@
-package jp.co.gfam.gits.common.entity;
+package jp.co.gfam.gits.integration.dao;
 
 import java.util.Date;
 
 /**
- * このクラスは課題情報を表現するドメインモデルです。
  *
- * @author Kenichi Masuda
+ * @author kenichi
+ *
  */
-public class Issue {
+public class IssueCriteria {
 
     /**
      * 課題番号
@@ -73,11 +73,6 @@ public class Issue {
      * ステータス
      */
     private String status;
-
-    /**
-     * 更新日時
-     */
-    private Date updateDateTime;
 
     /**
      * 課題番号を取得します。
@@ -311,23 +306,5 @@ public class Issue {
      */
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    /**
-     * 更新日時を取得します。
-     *
-     * @return 更新日時
-     */
-    public Date getUpdateDateTime() {
-        return this.updateDateTime;
-    }
-
-    /**
-     * 更新日時を設定します。
-     *
-     * @param updateDateTime 更新日時
-     */
-    public void setUpdateDateTime(Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
     }
 }

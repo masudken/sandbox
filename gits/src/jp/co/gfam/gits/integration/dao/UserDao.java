@@ -3,8 +3,7 @@ package jp.co.gfam.gits.integration.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import jp.co.gfam.gits.common.criteria.UserCriteria;
-import jp.co.gfam.gits.common.entity.User;
+import jp.co.gfam.gits.business.model.User;
 
 /**
  * ユーザ情報へのアクセス機能を提供するインターフェースです。

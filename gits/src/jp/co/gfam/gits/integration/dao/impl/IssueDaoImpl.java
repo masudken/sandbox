@@ -7,8 +7,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.co.gfam.gits.common.criteria.IssueCriteria;
-import jp.co.gfam.gits.common.entity.Issue;
+import jp.co.gfam.gits.business.model.Issue;
+import jp.co.gfam.gits.common.context.ConnectionContext;
+import jp.co.gfam.gits.integration.dao.IssueCriteria;
 import jp.co.gfam.gits.integration.dao.IssueDao;
 
 /**
@@ -60,7 +61,7 @@ public class IssueDaoImpl implements IssueDao {
     public List<Issue> search(IssueCriteria criteria) throws SQLException {
 
         // DBコネクションを取得
-        Connection connection = CONNECTION_HOLDER.get();
+        Connection connection = ConnectionContext.getContext().getConnection();
 
         // SQLの生成
         String query = createQuery(criteria);

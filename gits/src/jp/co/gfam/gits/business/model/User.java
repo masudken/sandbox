@@ -1,4 +1,4 @@
-package jp.co.gfam.gits.common.entity;
+package jp.co.gfam.gits.business.model;
 
 import java.util.Date;
 

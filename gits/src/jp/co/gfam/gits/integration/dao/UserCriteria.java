@@ -1,4 +1,4 @@
-package jp.co.gfam.gits.common.criteria;
+package jp.co.gfam.gits.integration.dao;
 
 public class UserCriteria {
 

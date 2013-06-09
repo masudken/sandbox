@@ -6,8 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
 
-import jp.co.gfam.gits.common.criteria.UserCriteria;
-import jp.co.gfam.gits.common.entity.User;
+import jp.co.gfam.gits.business.model.User;
+import jp.co.gfam.gits.integration.dao.UserCriteria;
 
 import org.junit.After;
 import org.junit.Before;
@@ -36,7 +36,7 @@ public class UserDaoImplTest {
     }
 
     /**
-     * {@link jp.co.gfam.gits.integration.dao.impl.UserDaoImpl#search(jp.co.gfam.gits.common.criteria.UserCriteria)}
+     * {@link jp.co.gfam.gits.integration.dao.impl.UserDaoImpl#search(jp.co.gfam.gits.integration.dao.UserCriteria)}
      * のためのテスト・メソッド。
      */
     @Test

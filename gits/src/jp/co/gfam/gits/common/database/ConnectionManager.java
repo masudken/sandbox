@@ -18,8 +18,14 @@ public class ConnectionManager {
         return instance;
     }
 
-    public Connection openConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql:@localhost:1521:gits",
+    public Connection openConnection() throws Exception {
+
+        // TODO JDK7からはこの記述は不要だが、
+        // Tomcatから実行した場合 No Such Driverエラーとなるので追加している。
+        // クラスパス系の問題らしいが、原因は不明
+        Class.forName("com.mysql.jdbc.Driver");
+
+        return DriverManager.getConnection("jdbc:mysql://localhost/gits",
                 "gfam", "gfam");
     }
 }

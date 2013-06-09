@@ -7,8 +7,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.co.gfam.gits.common.criteria.UserCriteria;
-import jp.co.gfam.gits.common.entity.User;
+import jp.co.gfam.gits.business.model.User;
+import jp.co.gfam.gits.common.context.ConnectionContext;
+import jp.co.gfam.gits.integration.dao.UserCriteria;
 import jp.co.gfam.gits.integration.dao.UserDao;
 
 /**
@@ -17,11 +18,6 @@ import jp.co.gfam.gits.integration.dao.UserDao;
  * @author Kenichi Masuda
  */
 public class UserDaoImpl implements UserDao {
-
-    /**
-     * DBコネクッションを保持した {@code ThreadLocal} オブジェクト
-     */
-    private static ThreadLocal<Connection> connectionHolder = new ThreadLocal<Connection>();
 
     private static final String SELECT_STATEMENT = "SELECT * FROM user";
 
@@ -36,7 +32,7 @@ public class UserDaoImpl implements UserDao {
     public List<User> search(UserCriteria criteria) throws SQLException {
 
         // DBコネクションを取得
-        Connection connection = connectionHolder.get();
+        Connection connection = ConnectionContext.getContext().getConnection();
 
         // SQLの生成
         String query = createQuery(criteria);
@@ -77,20 +73,21 @@ public class UserDaoImpl implements UserDao {
                 builder.append(" user_id = " + criteria.getUserId().toString());
             }
             if (criteria.getUserName() != null) {
-                builder.append(" AND");
-                builder.append(" user_name = " + criteria.getUserName());
+                // FIXME user_idが条件に含まれない場合の考慮
+                // builder.append(" AND");
+                builder.append(" user_name = '" + criteria.getUserName() + "'");
             }
             if (criteria.getFirstName() != null) {
                 builder.append(" AND");
-                builder.append(" first_name = " + criteria.getFirstName());
+                builder.append(" first_name = '" + criteria.getFirstName() + "'");
             }
             if (criteria.getLastName() != null) {
                 builder.append(" AND");
-                builder.append(" last_name = " + criteria.getLastName());
+                builder.append(" last_name = '" + criteria.getLastName() + "'");
             }
             if (criteria.getMailAddress() != null) {
                 builder.append(" AND");
-                builder.append(" mail_address = " + criteria.getMailAddress());
+                builder.append(" mail_address = '" + criteria.getMailAddress() + "'");
             }
         }
         return builder.toString();

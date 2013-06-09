@@ -1,0 +1,367 @@
+@CHARSET "UTF-8";
+
+/* ページ全体の背景,マージン指定*/
+body {
+    background-color:#FFFFFF;
+    margin-left:0px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    position: relative;
+}
+
+/* 本文テキストのフォントサイズ,色,行間 */
+body, td {
+    font-size:12px;
+    color:#4C4C4C;
+    line-height:150%;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+/** ログインフォームのスタイル */
+.form1 {
+    width: 250px;
+    height: 2em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size:15px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+/** 一般フォームのスタイル */
+.form2 {
+    width: 200px;
+    height: 1.5em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size:12px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+.form3 {
+    width: 700px;
+    height: 1.5em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size:12px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+/** テキストエリアのスタイル */
+.textarea1 {
+    width: 900px;
+    height: 250px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size:12px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+/** セレクトボックスのスタイル */
+.selectbox1 {
+    width: 100px;
+    height: 2.2em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size:12px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+/** ボタンのスタイル */
+.button1 {
+    width: 100px;
+    height: 2em;
+    background-color: #72c2ff;
+    color: #FFFFFF;
+    border: none;
+    font-size:15px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+.button2 {
+    width: 70px;
+    height: 2.0em;
+    background-color: #72c2ff;
+    color: #FFFFFF;
+    border: none;
+    font-size:12px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+/* 直線ライン色 */
+.hr1 {
+    border-color:#4D4552;
+    border-style:solid;
+}
+
+/* テキストリンクの色 */
+a:link {
+    text-decoration:none;
+    color:#72c2ff;
+}
+
+/* 訪問済みのリンクの色 */
+a:visited {
+    text-decoration:none;
+    color:#72c2ff;
+}
+
+/* クリック時のリンクの色 */
+a:active {
+    text-decoration:none;
+    color:#72c2ff;
+}
+
+/* クリック時のリンクの色 */
+a:hover {
+    text-decoration:none;
+    color:#72c2ff;
+}
+
+/* メニュー・テキストリンクの色 */
+.lin2 a:link {
+    font-size:13px;
+    color:#4C4C4C;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* メニュー・訪問済みのリンクの色 */
+.lin2 a:visited {
+    font-size:13px;
+    color:#4C4C4C;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* メニュー・クリック時のリンクの色 */
+.lin2 a:active {
+    font-size:13px;
+    color:#CC3300;
+    text-decoration:underline;
+    font-weight:bold;
+}
+
+/* メニュー・マウスの上にカーソルがあるときのリンクの色 */
+.lin2 a:hover {
+    font-size:13px;
+    color:#CC3300;
+    text-decoration:underline;
+    font-weight:bold;
+}
+
+/* 画面内外枠線の色 */
+.color1 {
+    background-color:#A9A9A9;
+}
+
+/* 画面内赤部分の背景色 */
+.color2 {
+    background-color:#FFFF00;
+}
+
+/* 画面内黄色部分の背景色 */
+.color3 {
+    background-color:#FF4500;
+}
+
+/* 画面内左セルの薄い赤 */
+.color4 {
+    background-color:#FF6633;
+}
+
+/* 画面内右セルの薄い赤 */
+.color5 {
+    background-color:#F0EDE4;
+}
+
+/* 画面内白部分 */
+.color6 {
+    background-color:#FFFFFF;
+}
+
+/* ログインタイトル */
+.logintitle {
+    font-size:60px;
+    color:#72c2ff;
+    font-family:"Century Gothic","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+    line-height:150%;
+}
+
+/*赤い太文字*/
+.text1 {
+    color:#C13407;
+    font-weight:bold;
+    line-height:150%;
+    font-size:18px;
+}
+
+.text2 {
+    color:#4C4C4C;
+    font-weight:bold;
+    line-height:150%;
+    font-size:14px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+.text3 {
+    color:#84D083;
+    font-weight:bold;
+    line-height:150%;
+    font-size:18px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+.bar{
+    margin-bottom:10px;
+    border-bottom:#999999 solid 1px;
+    margin:0px 50px 0px 20px;
+    padding:0px 2px 5px 2px;
+    color:#72c2ff;
+    font-size:16px;
+}
+
+.table1 table {
+    margin:0px 50px 0px 20px;
+    padding:0px 2px 5px 2px;
+    white-space: nowrap;
+}
+
+.table2 table {
+    margin:0px 50px 0px 20px;
+    padding:0px 0px 0px 0px;
+    border:#72c2ff solid 1px;
+    border-spacing: 0px;
+    white-space: nowrap;
+}
+
+.table2 th {
+    color:#f9f9f9;
+    background-color:#72c2ff;
+}
+
+.table2 tr:nth-of-type(odd){
+    background: #fffff0
+}
+
+.table2 td {
+    text-align: center;
+}
+
+.table2 td.left {
+    text-align: left;
+}
+
+.table3 table {
+    margin:0px 50px 0px 20px;
+    padding:20px 50px 20px 20px;
+    border:#999999 solid 1px;
+    white-space: nowrap;
+    background: #fffff0
+}
+
+/*ヘッダー下メニュー指定---------------------------------------------------*/
+/*ヘッダー下メニューテキストリンクの色*/
+#menu a:link {
+    color:#f9f9f9;
+    text-decoration:none;
+}
+
+/*ヘッダー下メニュー訪問済みのリンクの色*/
+#menu a:visited {
+    color:#f9f9f9;
+    text-decoration:none;
+}
+
+/*ヘッダー下メニュークリック時のリンクの色*/
+#menu a:active {
+    color:#f9f9f9;
+    text-decoration:none;
+}
+
+/*ヘッダー下メニューマウスの上にカーソルがあるときのリンクの色*/
+#menu a:hover {
+    color:#dbeebb;
+    text-decoration:none;
+}
+
+#menu{
+    display:block;
+    background-color:#72c2ff;
+    line-height:100%;
+    height:40px;
+    width: 100%;
+    margin-bottom:8px;
+}
+
+#menu table {
+    white-space: nowrap;
+}
+
+#menu_title{
+    color:#f9f9f9;
+    font-size:30px;
+    font-family:"Century Gothic";
+    padding: 7px 0px 5px 10px;
+    text-align:left;
+}
+
+#menu_box{
+    color:#f9f9f9;
+    font-size:18px;
+    padding: 7px 0px 5px 0px;
+    text-align:left;
+}
+
+#menu_logout{
+    color:#f9f9f9;
+    font-size:14px;
+    padding: 7px 10px 5px 0px;
+    text-align:right;
+}
+
+#contents{
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+padding-bottom: 100px;
+}
+
+#main {
+    float: right;
+    width: 100%;
+    min-height: 300px;
+ }
+#main .inner {
+    margin-left: 250px;
+    position: relative;
+    z-index: 1;
+}
+#container {
+    width: 100%;
+    position: relative;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+}
+
+/*フッター指定----------------------------------------------------------------------------------------------*/
+#footer{
+    border-top:#999999 solid 1px;
+    clear:both;
+    width: 100%;
+    background-color:#FFFFFF;
+    padding: 10px 0px 10px 0px;
+    position: absolute;
+    bottom: 0;
+    height: 70xp;
+}
+
+#copyright{
+    color:#333333;
+    font-size:12px;
+    text-align:right;
+    padding: 0px 30px 0px 0px;
+}
