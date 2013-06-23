@@ -1,4 +1,4 @@
-package jp.co.gfam.gits.business.model;
+package jp.co.gfam.gits.integration.entity;
 
 import java.util.Date;
 
@@ -12,72 +12,72 @@ public class Issue {
     /**
      * 課題番号
      */
-    private Integer issueId;
+    private Integer _issueId;
 
     /**
-     * 課題種別
+     * 課題種別コード
      */
-    private String issueType;
+    private String _issueTypeCode;
 
     /**
      * タイトル
      */
-    private String title;
+    private String _title;
 
     /**
      * 説明
      */
-    private String discription;
+    private String _discription;
 
     /**
      * 起票ID
      */
-    private Integer registrantId;
+    private Integer _registrantId;
 
     /**
      * 起票日
      */
-    private Date registerDate;
+    private Date _registerDate;
 
     /**
      * 担当者ID
      */
-    private Integer representativeId;
+    private Integer _representativeId;
 
     /**
      * 優先度
      */
-    private String priority;
+    private String _priority;
 
     /**
      * 開始日
      */
-    private Date startDate;
+    private Date _startDate;
 
     /**
      * 終了日
      */
-    private Date endDate;
+    private Date _endDate;
 
     /**
      * 進捗
      */
-    private Short progress;
+    private Short _progress;
 
     /**
      * 工数
      */
-    private Short cost;
+    private Short _cost;
 
     /**
      * ステータス
      */
-    private String status;
+    private String _status;
 
     /**
      * 更新日時
      */
-    private Date updateDateTime;
+    private Date _updateDateTime;
 
     /**
      * 課題番号を取得します。
@@ -85,7 +85,7 @@ public class Issue {
      * @return 課題番号
      */
     public Integer getIssueId() {
-        return this.issueId;
+        return _issueId;
     }
 
     /**
@@ -94,25 +94,25 @@ public class Issue {
      * @param issueId 課題番号
      */
     public void setIssueId(Integer issueId) {
-        this.issueId = issueId;
+        _issueId = issueId;
     }
 
     /**
-     * 課題種別を取得します。
+     * 課題種別コードを取得します。
      *
-     * @return 課題種別
+     * @return 課題種別コード
      */
-    public String getIssueType() {
-        return this.issueType;
+    public String getIssueTypeCode() {
+        return _issueTypeCode;
     }
 
     /**
-     * 課題種別を設定します。
+     * 課題種別コードを設定します。
      *
-     * @param issueType 課題種別
+     * @param issueTypeCode 課題種別コード
      */
-    public void setIssueType(String issueType) {
-        this.issueType = issueType;
+    public void setIssueTypeCode(String issueTypeCode) {
+        _issueTypeCode = issueTypeCode;
     }
 
     /**
@@ -121,7 +121,7 @@ public class Issue {
      * @return タイトル
      */
     public String getTitle() {
-        return this.title;
+        return _title;
     }
 
     /**
@@ -130,7 +130,7 @@ public class Issue {
      * @param title タイトル
      */
     public void setTitle(String title) {
-        this.title = title;
+        _title = title;
     }
 
     /**
@@ -139,7 +139,7 @@ public class Issue {
      * @return 説明
      */
     public String getDiscription() {
-        return this.discription;
+        return _discription;
     }
 
     /**
@@ -148,7 +148,7 @@ public class Issue {
      * @param discription 説明
      */
     public void setDiscription(String discription) {
-        this.discription = discription;
+        _discription = discription;
     }
 
     /**
@@ -157,7 +157,7 @@ public class Issue {
      * @return 起票者ID
      */
     public Integer getRegistrantId() {
-        return this.registrantId;
+        return _registrantId;
     }
 
     /**
@@ -166,7 +166,7 @@ public class Issue {
      * @param registrantId 起票者ID
      */
     public void setRegistrantId(Integer registrantId) {
-        this.registrantId = registrantId;
+        _registrantId = registrantId;
     }
 
     /**
@@ -175,7 +175,7 @@ public class Issue {
      * @return 起票日
      */
     public Date getRegisterDate() {
-        return this.registerDate;
+        return _registerDate;
     }
 
     /**
@@ -184,7 +184,7 @@ public class Issue {
      * @param regsterDate 起票日
      */
     public void setRegisterDate(Date registerDate) {
-        this.registerDate = registerDate;
+        _registerDate = registerDate;
     }
 
     /**
@@ -193,7 +193,7 @@ public class Issue {
      * @return 担当者ID
      */
     public Integer getRepresentativeId() {
-        return this.representativeId;
+        return _representativeId;
     }
 
     /**
@@ -202,7 +202,7 @@ public class Issue {
      * @param representativeId 担当者ID
      */
     public void setRepresentativeId(Integer representativeId) {
-        this.representativeId = representativeId;
+        _representativeId = representativeId;
     }
 
     /**
@@ -211,7 +211,7 @@ public class Issue {
      * @return 優先度
      */
     public String getPriority() {
-        return this.priority;
+        return _priority;
     }
 
     /**
@@ -220,7 +220,7 @@ public class Issue {
      * @param priority 優先度
      */
     public void setPriority(String priority) {
-        this.priority = priority;
+        _priority = priority;
     }
 
     /**
@@ -229,7 +229,7 @@ public class Issue {
      * @return 開始日
      */
     public Date getStartDate() {
-        return this.startDate;
+        return _startDate;
     }
 
     /**
@@ -238,7 +238,7 @@ public class Issue {
      * @param startDate 開始日
      */
     public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+        _startDate = startDate;
     }
 
     /**
@@ -247,7 +247,7 @@ public class Issue {
      * @return 終了日
      */
     public Date getEndDate() {
-        return this.endDate;
+        return _endDate;
     }
 
     /**
@@ -256,7 +256,7 @@ public class Issue {
      * @param endDate 終了日
      */
     public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+        _endDate = endDate;
     }
 
     /**
@@ -265,7 +265,7 @@ public class Issue {
      * @return 進捗
      */
     public Short getProgress() {
-        return this.progress;
+        return _progress;
     }
 
     /**
@@ -274,7 +274,7 @@ public class Issue {
      * @param progress 進捗
      */
     public void setProgress(Short progress) {
-        this.progress = progress;
+        _progress = progress;
     }
 
     /**
@@ -283,7 +283,7 @@ public class Issue {
      * @return 工数
      */
     public Short getCost() {
-        return this.cost;
+        return _cost;
     }
 
     /**
@@ -292,7 +292,7 @@ public class Issue {
      * @param cost 工数
      */
     public void setCost(Short cost) {
-        this.cost = cost;
+        _cost = cost;
     }
 
     /**
@@ -301,7 +301,7 @@ public class Issue {
      * @return ステータス
      */
     public String getStatus() {
-        return this.status;
+        return _status;
     }
 
     /**
@@ -310,7 +310,7 @@ public class Issue {
      * @param status ステータス
      */
     public void setStatus(String status) {
-        this.status = status;
+        _status = status;
     }
 
     /**
@@ -319,7 +319,7 @@ public class Issue {
      * @return 更新日時
      */
     public Date getUpdateDateTime() {
-        return this.updateDateTime;
+        return _updateDateTime;
     }
 
     /**
@@ -328,6 +328,6 @@ public class Issue {
      * @param updateDateTime 更新日時
      */
     public void setUpdateDateTime(Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
+        _updateDateTime = updateDateTime;
     }
 }

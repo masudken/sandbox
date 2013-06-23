@@ -12,72 +12,72 @@ public class IssueDto {
     /**
      * 課題番号
      */
-    private int issueId;
+    private int _issueId;
 
     /**
      * 課題種別
      */
-    private String issueType;
+    private IssueTypeDto _issueType;
 
     /**
      * タイトル
      */
-    private String title;
+    private String _title;
 
     /**
      * 説明
      */
-    private String discription;
+    private String _discription;
 
     /**
-     * 起票ID
+     * 起票者
      */
-    private int registrantId;
+    private UserDto _registrant;
 
     /**
      * 起票日
      */
-    private Date registerDate;
+    private Date _registerDate;
 
     /**
-     * 担当者ID
+     * 担当者
      */
-    private int representativeId;
+    private UserDto _representative;
 
     /**
      * 優先度
      */
-    private String priority;
+    private String _priority;
 
     /**
      * 開始日
      */
-    private Date startDate;
+    private Date _startDate;
 
     /**
      * 終了日
      */
-    private Date endDate;
+    private Date _endDate;
 
     /**
      * 進捗
      */
-    private short progress;
+    private short _progress;
 
     /**
      * 工数
      */
-    private short cost;
+    private short _cost;
 
     /**
      * ステータス
      */
-    private String status;
+    private String _status;
 
     /**
      * 更新日時
      */
-    private Date updateDateTime;
+    private Date _updateDateTime;
 
     /**
      * 課題番号を取得します。
@@ -85,7 +85,7 @@ public class IssueDto {
      * @return 課題番号
      */
     public int getIssueId() {
-        return this.issueId;
+        return _issueId;
     }
 
     /**
@@ -94,7 +94,7 @@ public class IssueDto {
      * @param issueId 課題番号
      */
     public void setIssueId(int issueId) {
-        this.issueId = issueId;
+        _issueId = issueId;
     }
 
     /**
@@ -102,8 +102,8 @@ public class IssueDto {
      *
      * @return 課題種別
      */
-    public String getIssueType() {
-        return this.issueType;
+    public IssueTypeDto getIssueType() {
+        return _issueType;
     }
 
     /**
@@ -111,8 +111,8 @@ public class IssueDto {
      *
      * @param issueType 課題種別
      */
-    public void setIssueType(String issueType) {
-        this.issueType = issueType;
+    public void setIssueType(IssueTypeDto issueType) {
+        _issueType = issueType;
     }
 
     /**
@@ -121,7 +121,7 @@ public class IssueDto {
      * @return タイトル
      */
     public String getTitle() {
-        return this.title;
+        return _title;
     }
 
     /**
@@ -130,7 +130,7 @@ public class IssueDto {
      * @param title タイトル
      */
     public void setTitle(String title) {
-        this.title = title;
+        _title = title;
     }
 
     /**
@@ -139,7 +139,7 @@ public class IssueDto {
      * @return 説明
      */
     public String getDiscription() {
-        return this.discription;
+        return _discription;
     }
 
     /**
@@ -148,25 +148,25 @@ public class IssueDto {
      * @param discription 説明
      */
     public void setDiscription(String discription) {
-        this.discription = discription;
+        _discription = discription;
     }
 
     /**
-     * 起票者IDを取得します。
+     * 起票者を取得します。
      *
-     * @return 起票者ID
+     * @return 起票者
      */
-    public int getRegistrantId() {
-        return this.registrantId;
+    public UserDto getRegistrant() {
+        return _registrant;
     }
 
     /**
-     * 起票者IDを設定します。
+     * 起票者を設定します。
      *
-     * @param registrantId 起票者ID
+     * @param registrant 起票者
      */
-    public void setRegistrantId(int registrantId) {
-        this.registrantId = registrantId;
+    public void setRegistrant(UserDto registrant) {
+        _registrant = registrant;
     }
 
     /**
@@ -175,7 +175,7 @@ public class IssueDto {
      * @return 起票日
      */
     public Date getRegisterdDate() {
-        return this.registerDate;
+        return _registerDate;
     }
 
     /**
@@ -184,25 +184,25 @@ public class IssueDto {
      * @param regsterDate 起票日
      */
     public void setRegisterDate(Date registerDate) {
-        this.registerDate = registerDate;
+        _registerDate = registerDate;
     }
 
     /**
-     * 担当者IDを取得します。
+     * 担当者を取得します。
      *
-     * @return 担当者ID
+     * @return 担当者
      */
-    public int getRepresentativeId() {
-        return this.representativeId;
+    public UserDto getRepresentative() {
+        return _representative;
     }
 
     /**
-     * 担当者IDを設定します。
+     * 担当者を設定します。
      *
-     * @param representativeId 担当者ID
+     * @param representative 担当者
      */
-    public void setRepresentativeId(int representativeId) {
-        this.representativeId = representativeId;
+    public void setRepresentative(UserDto representative) {
+        _representative = representative;
     }
 
     /**
@@ -211,7 +211,7 @@ public class IssueDto {
      * @return 優先度
      */
     public String getPriority() {
-        return this.priority;
+        return _priority;
     }
 
     /**
@@ -220,7 +220,7 @@ public class IssueDto {
      * @param priority 優先度
      */
     public void setPriority(String priority) {
-        this.priority = priority;
+        _priority = priority;
     }
 
     /**
@@ -229,7 +229,7 @@ public class IssueDto {
      * @return 開始日
      */
     public Date getStartDate() {
-        return this.startDate;
+        return _startDate;
     }
 
     /**
@@ -238,7 +238,7 @@ public class IssueDto {
      * @param startDate 開始日
      */
     public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+        _startDate = startDate;
     }
 
     /**
@@ -247,7 +247,7 @@ public class IssueDto {
      * @return 終了日
      */
     public Date getEndDate() {
-        return this.endDate;
+        return _endDate;
     }
 
     /**
@@ -256,7 +256,7 @@ public class IssueDto {
      * @param endDate 終了日
      */
     public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+        _endDate = endDate;
     }
 
     /**
@@ -265,7 +265,7 @@ public class IssueDto {
      * @return 進捗
      */
     public short getProgress() {
-        return this.progress;
+        return _progress;
     }
 
     /**
@@ -274,7 +274,7 @@ public class IssueDto {
      * @param progress 進捗
      */
     public void setProgress(short progress) {
-        this.progress = progress;
+        _progress = progress;
     }
 
     /**
@@ -283,7 +283,7 @@ public class IssueDto {
      * @return 工数
      */
     public short getCost() {
-        return this.cost;
+        return _cost;
     }
 
     /**
@@ -292,7 +292,7 @@ public class IssueDto {
      * @param cost 工数
      */
     public void setCost(short cost) {
-        this.cost = cost;
+        _cost = cost;
     }
 
     /**
@@ -301,7 +301,7 @@ public class IssueDto {
      * @return ステータス
      */
     public String getStatus() {
-        return this.status;
+        return _status;
     }
 
     /**
@@ -310,7 +310,7 @@ public class IssueDto {
      * @param status ステータス
      */
     public void setStatus(String status) {
-        this.status = status;
+        _status = status;
     }
 
     /**
@@ -319,7 +319,7 @@ public class IssueDto {
      * @return 更新日時
      */
     public Date getUpdateDateTime() {
-        return this.updateDateTime;
+        return _updateDateTime;
     }
 
     /**
@@ -328,6 +328,6 @@ public class IssueDto {
      * @param updateDateTime 更新日時
      */
     public void setUpdateDateTime(Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
+        _updateDateTime = updateDateTime;
     }
 }

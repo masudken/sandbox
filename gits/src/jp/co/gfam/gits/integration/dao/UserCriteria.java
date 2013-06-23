@@ -1,31 +1,36 @@
 package jp.co.gfam.gits.integration.dao;
 
+/**
+ * このクラスはユーザ情報の検索条件を表現します。
+ *
+ * @author Kenichi Masuda
+ */
 public class UserCriteria {
 
     /**
      * ユーザID
      */
-    private Integer userId;
+    private Integer _userId;
 
     /**
      * ユーザ名
      */
-    private String userName;
+    private String _userName;
 
     /**
      * 名
      */
-    private String firstName;
+    private String _firstName;
 
     /**
      * 姓
      */
-    private String lastName;
+    private String _lastName;
 
     /**
      * メールアドレス
      */
-    private String mailAddress;
+    private String _mailAddress;
 
     /**
      * ユーザIDを取得します。
@@ -33,7 +38,7 @@ public class UserCriteria {
      * @return ユーザID
      */
     public Integer getUserId() {
-        return this.userId;
+        return _userId;
     }
 
     /**
@@ -42,7 +47,7 @@ public class UserCriteria {
      * @param userId ユーザID
      */
     public void setUserId(Integer userId) {
-        this.userId = userId;
+        _userId = userId;
     }
 
     /**
@@ -51,7 +56,7 @@ public class UserCriteria {
      * @return ユーザ名
      */
     public String getUserName() {
-        return this.userName;
+        return _userName;
     }
 
     /**
@@ -60,7 +65,7 @@ public class UserCriteria {
      * @param userName ユーザ名
      */
     public void setUserName(String userName) {
-        this.userName = userName;
+        _userName = userName;
     }
 
     /**
@@ -69,7 +74,7 @@ public class UserCriteria {
      * @return 名
      */
     public String getFirstName() {
-        return this.firstName;
+        return _firstName;
     }
 
     /**
@@ -78,7 +83,7 @@ public class UserCriteria {
      * @param firstName 名
      */
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        _firstName = firstName;
     }
 
     /**
@@ -87,7 +92,7 @@ public class UserCriteria {
      * @return 姓
      */
     public String getLastName() {
-        return this.lastName;
+        return _lastName;
     }
 
     /**
@@ -96,7 +101,7 @@ public class UserCriteria {
      * @param lastName 姓
      */
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        _lastName = lastName;
     }
 
     /**
@@ -105,7 +110,7 @@ public class UserCriteria {
      * @return メールアドレス
      */
     public String getMailAddress() {
-        return this.mailAddress;
+        return _mailAddress;
     }
 
     /**
@@ -114,6 +119,30 @@ public class UserCriteria {
      * @param mailAddress メールアドレス
      */
     public void setMailAddress(String mailAddress) {
-        this.mailAddress = mailAddress;
+        _mailAddress = mailAddress;
+    }
+
+    /**
+     * 検索条件が空かどうかを判定します。
+     *
+     * @param 検索条件が空の場合 {@code true} 、それ以外の場合は {@code false}
+     */
+    public boolean isEmpty() {
+        if (_userId != null) {
+            return false;
+        }
+        if (_userName != null) {
+            return false;
+        }
+        if (_firstName != null) {
+            return false;
+        }
+        if (_lastName != null) {
+            return false;
+        }
+        if (_mailAddress != null) {
+            return false;
+        }
+        return true;
     }
 }

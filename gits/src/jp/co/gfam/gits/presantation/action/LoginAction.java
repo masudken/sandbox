@@ -2,8 +2,11 @@ package jp.co.gfam.gits.presantation.action;
 
 import java.sql.Connection;
 
-import jp.co.gfam.gits.business.service.AuthenticationService;
-import jp.co.gfam.gits.business.service.impl.AuthenticationServiceImpl;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Result;
+
+import jp.co.gfam.gits.business.authentication.AuthenticationService;
+import jp.co.gfam.gits.business.authentication.AuthenticationServiceImpl;
 import jp.co.gfam.gits.common.context.ConnectionContext;
 import jp.co.gfam.gits.common.database.ConnectionManager;
 
@@ -27,6 +30,20 @@ public class LoginAction {
      * @return
      * @throws Exception
      */
+    @Action(value = "/login-init", results = { @Result(name = "success",
+            location = "login.jsp") })
+    public String initialize() throws Exception {
+        return "success";
+    }
+
+    /**
+     * このアクションを実行します。
+     *
+     * @return
+     * @throws Exception
+     */
+    @Action(value = "/login", results = { @Result(name = "success",
+            location = "issue_list.jsp") })
     public String execute() throws Exception {
 
         // TODO サービスにIntercepterを適用する形でトランザクション管理をしたい

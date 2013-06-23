@@ -3,7 +3,7 @@ package jp.co.gfam.gits.integration.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import jp.co.gfam.gits.business.model.Issue;
+import jp.co.gfam.gits.integration.entity.Issue;
 
 /**
  * 課題情報へのアクセス機能を提供するインターフェースです。
@@ -17,14 +17,14 @@ public interface IssueDao {
      *
      * @param issue　課題
      */
-    public void insert(Issue issue);
+    public void insert(Issue issue) throws SQLException;
 
     /**
      * 指定された課題を更新します。
      *
      * @param issue 課題
      */
-    public void update(Issue issue);
+    public void update(Issue issue) throws SQLException;
 
     /**
      * 指定された検索条件に一致する課題を検索し、返します。

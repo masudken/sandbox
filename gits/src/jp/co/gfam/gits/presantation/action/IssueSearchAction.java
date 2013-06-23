@@ -2,7 +2,7 @@ package jp.co.gfam.gits.presantation.action;
 
 import java.sql.Connection;
 
-import jp.co.gfam.gits.business.service.IssueManagementService;
+import jp.co.gfam.gits.business.core.IssueManagementService;
 import jp.co.gfam.gits.common.context.ConnectionContext;
 import jp.co.gfam.gits.common.database.ConnectionManager;
 import jp.co.gfam.gits.common.dto.IssueListDto;

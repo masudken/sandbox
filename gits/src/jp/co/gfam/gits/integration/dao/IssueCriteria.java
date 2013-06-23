@@ -3,76 +3,76 @@ package jp.co.gfam.gits.integration.dao;
 import java.util.Date;
 
 /**
+ * このクラスは課題情報の検索条件を表現します。
  *
- * @author kenichi
- *
+ * @author Kenichi Masuda
  */
 public class IssueCriteria {
 
     /**
      * 課題番号
      */
-    private Integer issueId;
+    private Integer _issueId;
 
     /**
-     * 課題種別
+     * 課題種別コード
      */
-    private String issueType;
+    private String _issueTypeCode;
 
     /**
      * タイトル
      */
-    private String title;
+    private String _title;
 
     /**
      * 説明
      */
-    private String discription;
+    private String _discription;
 
     /**
-     * 起票ID
+     * 起票者ID
      */
-    private Integer registrantId;
+    private Integer _registrantId;
 
     /**
      * 起票日
      */
-    private Date registerDate;
+    private Date _registerDate;
 
     /**
      * 担当者ID
      */
-    private Integer representativeId;
+    private Integer _representativeId;
 
     /**
      * 優先度
      */
-    private String priority;
+    private String _priority;
 
     /**
      * 開始日
      */
-    private Date startDate;
+    private Date _startDate;
 
     /**
      * 終了日
      */
-    private Date endDate;
+    private Date _endDate;
 
     /**
      * 進捗
      */
-    private Short progress;
+    private Short _progress;
 
     /**
      * 工数
      */
-    private Short cost;
+    private Short _cost;
 
     /**
      * ステータス
      */
-    private String status;
+    private String _status;
 
     /**
      * 課題番号を取得します。
@@ -80,7 +80,7 @@ public class IssueCriteria {
      * @return 課題番号
      */
     public Integer getIssueId() {
-        return this.issueId;
+        return _issueId;
     }
 
     /**
@@ -89,25 +89,25 @@ public class IssueCriteria {
      * @param issueId 課題番号
      */
     public void setIssueId(Integer issueId) {
-        this.issueId = issueId;
+        _issueId = issueId;
     }
 
     /**
-     * 課題種別を取得します。
+     * 課題種別コードを取得します。
      *
-     * @return 課題種別
+     * @return 課題種別コード
      */
-    public String getIssueType() {
-        return this.issueType;
+    public String getIssueTypeCode() {
+        return _issueTypeCode;
     }
 
     /**
-     * 課題種別を設定します。
+     * 課題種別コードを設定します。
      *
-     * @param issueType 課題種別
+     * @param issueTypeCode 課題種別コード
      */
-    public void setIssueType(String issueType) {
-        this.issueType = issueType;
+    public void setIssueType(String issueTypeCode) {
+        _issueTypeCode = issueTypeCode;
     }
 
     /**
@@ -116,7 +116,7 @@ public class IssueCriteria {
      * @return タイトル
      */
     public String getTitle() {
-        return this.title;
+        return _title;
     }
 
     /**
@@ -125,7 +125,7 @@ public class IssueCriteria {
      * @param title タイトル
      */
     public void setTitle(String title) {
-        this.title = title;
+        _title = title;
     }
 
     /**
@@ -134,7 +134,7 @@ public class IssueCriteria {
      * @return 説明
      */
     public String getDiscription() {
-        return this.discription;
+        return _discription;
     }
 
     /**
@@ -143,7 +143,7 @@ public class IssueCriteria {
      * @param discription 説明
      */
     public void setDiscription(String discription) {
-        this.discription = discription;
+        _discription = discription;
     }
 
     /**
@@ -152,7 +152,7 @@ public class IssueCriteria {
      * @return 起票者ID
      */
     public Integer getRegistrantId() {
-        return this.registrantId;
+        return _registrantId;
     }
 
     /**
@@ -161,7 +161,7 @@ public class IssueCriteria {
      * @param registrantId 起票者ID
      */
     public void setRegistrantId(Integer registrantId) {
-        this.registrantId = registrantId;
+        _registrantId = registrantId;
     }
 
     /**
@@ -169,8 +169,9 @@ public class IssueCriteria {
      *
      * @return 起票日
      */
-    public Date getRegisterdDate() {
-        return this.registerDate;
+    public Date getRegisterDate() {
+        // FIXME 日付書式の文字列で返す？
+        return _registerDate;
     }
 
     /**
@@ -179,7 +180,7 @@ public class IssueCriteria {
      * @param regsterDate 起票日
      */
     public void setRegisterDate(Date registerDate) {
-        this.registerDate = registerDate;
+        _registerDate = registerDate;
     }
 
     /**
@@ -188,7 +189,7 @@ public class IssueCriteria {
      * @return 担当者ID
      */
     public Integer getRepresentativeId() {
-        return this.representativeId;
+        return _representativeId;
     }
 
     /**
@@ -197,7 +198,7 @@ public class IssueCriteria {
      * @param representativeId 担当者ID
      */
     public void setRepresentativeId(Integer representativeId) {
-        this.representativeId = representativeId;
+        _representativeId = representativeId;
     }
 
     /**
@@ -206,7 +207,7 @@ public class IssueCriteria {
      * @return 優先度
      */
     public String getPriority() {
-        return this.priority;
+        return _priority;
     }
 
     /**
@@ -215,7 +216,7 @@ public class IssueCriteria {
      * @param priority 優先度
      */
     public void setPriority(String priority) {
-        this.priority = priority;
+        _priority = priority;
     }
 
     /**
@@ -224,7 +225,7 @@ public class IssueCriteria {
      * @return 開始日
      */
     public Date getStartDate() {
-        return this.startDate;
+        return _startDate;
     }
 
     /**
@@ -233,7 +234,7 @@ public class IssueCriteria {
      * @param startDate 開始日
      */
     public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+        _startDate = startDate;
     }
 
     /**
@@ -242,7 +243,7 @@ public class IssueCriteria {
      * @return 終了日
      */
     public Date getEndDate() {
-        return this.endDate;
+        return _endDate;
     }
 
     /**
@@ -251,7 +252,7 @@ public class IssueCriteria {
      * @param endDate 終了日
      */
     public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+        _endDate = endDate;
     }
 
     /**
@@ -260,7 +261,7 @@ public class IssueCriteria {
      * @return 進捗
      */
     public Short getProgress() {
-        return this.progress;
+        return _progress;
     }
 
     /**
@@ -269,7 +270,7 @@ public class IssueCriteria {
      * @param progress 進捗
      */
     public void setProgress(Short progress) {
-        this.progress = progress;
+        _progress = progress;
     }
 
     /**
@@ -278,7 +279,7 @@ public class IssueCriteria {
      * @return 工数
      */
     public Short getCost() {
-        return this.cost;
+        return _cost;
     }
 
     /**
@@ -287,7 +288,7 @@ public class IssueCriteria {
      * @param cost 工数
      */
     public void setCost(Short cost) {
-        this.cost = cost;
+        _cost = cost;
     }
 
     /**
@@ -296,7 +297,7 @@ public class IssueCriteria {
      * @return ステータス
      */
     public String getStatus() {
-        return this.status;
+        return _status;
     }
 
     /**
@@ -305,6 +306,54 @@ public class IssueCriteria {
      * @param status ステータス
      */
     public void setStatus(String status) {
-        this.status = status;
+        _status = status;
+    }
+
+    /**
+     * 検索条件が空かどうかを判定します。
+     *
+     * @param 検索条件が空の場合 {@code true} 、それ以外の場合は {@code false}
+     */
+    public boolean isEmpty() {
+        if (_issueId != null) {
+            return false;
+        }
+        if (_issueTypeCode != null) {
+            return false;
+        }
+        if (_title != null) {
+            return false;
+        }
+        if (_discription != null) {
+            return false;
+        }
+        if (_registrantId != null) {
+            return false;
+        }
+        if (_registerDate != null) {
+            return false;
+        }
+        if (_representativeId != null) {
+            return false;
+        }
+        if (_priority != null) {
+            return false;
+        }
+        if (_startDate != null) {
+            return false;
+        }
+        if (_endDate != null) {
+            return false;
+        }
+        if (_progress != null) {
+            return false;
+        }
+        if (_cost != null) {
+            return false;
+        }
+        if (_status != null) {
+            return false;
+        }
+        return true;
     }
 }

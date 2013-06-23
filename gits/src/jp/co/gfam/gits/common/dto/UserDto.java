@@ -12,42 +12,32 @@ public class UserDto {
     /**
      * ユーザID
      */
-    private int userId;
+    private int _userId;
 
     /**
      * ユーザ名
      */
-    private String userName;
+    private String _userName;
 
     /**
      * パスワード
      */
-    private String password;
+    private String _password;
 
     /**
      * パスワード有効期限
      */
-    private Date expirationDate;
+    private Date _expirationDate;
 
     /**
-     * 名
+     * 姓名
      */
-    private String firstName;
-
-    /**
-     * 姓
-     */
-    private String lastName;
+    private String _fullName;
 
     /**
      * メールアドレス
      */
-    private String mailAddress;
-
-    /**
-     * 更新日時
-     */
-    private Date updateDateTime;
+    private String _mailAddress;
 
     /**
      * ユーザIDを取得します。
@@ -55,7 +45,7 @@ public class UserDto {
      * @return ユーザID
      */
     public int getUserId() {
-        return this.userId;
+        return _userId;
     }
 
     /**
@@ -64,7 +54,7 @@ public class UserDto {
      * @param userId ユーザID
      */
     public void setUserId(int userId) {
-        this.userId = userId;
+        _userId = userId;
     }
 
     /**
@@ -73,7 +63,7 @@ public class UserDto {
      * @return ユーザ名
      */
     public String getUserName() {
-        return this.userName;
+        return _userName;
     }
 
     /**
@@ -82,7 +72,7 @@ public class UserDto {
      * @param userName ユーザ名
      */
     public void setUserName(String userName) {
-        this.userName = userName;
+        _userName = userName;
     }
 
     /**
@@ -91,7 +81,7 @@ public class UserDto {
      * @return パスワード
      */
     public String getPassword() {
-        return this.password;
+        return _password;
     }
 
     /**
@@ -100,7 +90,7 @@ public class UserDto {
      * @param title パスワード
      */
     public void setPassword(String password) {
-        this.password = password;
+        _password = password;
     }
 
     /**
@@ -109,7 +99,7 @@ public class UserDto {
      * @return パスワード有効期限
      */
     public Date getExpirationDate() {
-        return this.expirationDate;
+        return _expirationDate;
     }
 
     /**
@@ -118,43 +108,25 @@ public class UserDto {
      * @param expirationDate パスワード有効期限
      */
     public void setExpirationDate(Date expirationDate) {
-        this.expirationDate = expirationDate;
+        _expirationDate = expirationDate;
     }
 
     /**
-     * 名を取得します。
+     * 姓名を取得します。
      *
-     * @return 名
+     * @return 姓名
      */
-    public String getFirstName() {
-        return this.firstName;
+    public String getFullName() {
+        return _fullName;
     }
 
     /**
-     * 名を設定します。
+     * 姓名を設定します。
      *
-     * @param firstName 名
+     * @param fullName 姓名
      */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * 姓を取得します。
-     *
-     * @return 姓
-     */
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    /**
-     * 姓を設定します。
-     *
-     * @param lastName 姓
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        _fullName = fullName;
     }
 
     /**
@@ -163,7 +135,7 @@ public class UserDto {
      * @return メールアドレス
      */
     public String getMailAddress() {
-        return this.mailAddress;
+        return _mailAddress;
     }
 
     /**
@@ -172,24 +144,6 @@ public class UserDto {
      * @param mailAddress メールアドレス
      */
     public void setMailAddress(String mailAddress) {
-        this.mailAddress = mailAddress;
-    }
-
-    /**
-     * 更新日時を取得します。
-     *
-     * @return 更新日時
-     */
-    public Date getUpdateDateTime() {
-        return this.updateDateTime;
-    }
-
-    /**
-     * 更新日時を設定します。
-     *
-     * @param updateDateTime 更新日時
-     */
-    public void setUpdateDateTime(Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
+        _mailAddress = mailAddress;
     }
 }

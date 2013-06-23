@@ -13,13 +13,13 @@ public class IssueListDto {
     /**
      * 課題一覧のリスト
      */
-    private List<IssueDto> issueList;
+    private List<IssueDto> _issueList;
 
     /**
      * 空の <code>IssueListDto</code> を構築します。
      */
     public IssueListDto() {
-        this.issueList = new ArrayList<IssueDto>();
+        _issueList = new ArrayList<IssueDto>();
     }
 
     /**
@@ -28,7 +28,7 @@ public class IssueListDto {
      * @param 課題DTOのリスト
      */
     public IssueListDto(List<IssueDto> issueList) {
-        this.issueList = new ArrayList<IssueDto>(issueList);
+        _issueList = new ArrayList<IssueDto>(issueList);
     }
 
     /**
@@ -38,7 +38,7 @@ public class IssueListDto {
      * @return 課題DTO
      */
     public IssueDto getIssue(int issueId) {
-        for (IssueDto issue : this.issueList) {
+        for (IssueDto issue : _issueList) {
             if (issue.getIssueId() == issueId) {
                 return issue;
             }
@@ -52,7 +52,7 @@ public class IssueListDto {
      * @return 課題DTOのリスト
      */
     public List<IssueDto> getIssueList() {
-        return new ArrayList<IssueDto>(this.issueList);
+        return new ArrayList<IssueDto>(_issueList);
     }
 
     /**
@@ -61,6 +61,6 @@ public class IssueListDto {
      * @param issue 課題DTO
      */
     public void addIssue(IssueDto issue) {
-        this.issueList.add(issue);
+        _issueList.add(issue);
     }
 }

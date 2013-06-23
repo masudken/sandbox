@@ -1,4 +1,4 @@
-package jp.co.gfam.gits.business.model;
+package jp.co.gfam.gits.integration.entity;
 
 import java.util.Date;
 
@@ -12,42 +12,42 @@ public class User {
     /**
      * ユーザID
      */
-    private Integer userId;
+    private Integer _userId;
 
     /**
      * ユーザ名
      */
-    private String userName;
+    private String _userName;
 
     /**
      * パスワード
      */
-    private String password;
+    private String _password;
 
     /**
      * パスワード有効期限
      */
-    private Date expirationDate;
+    private Date _expirationDate;
 
     /**
      * 名
      */
-    private String firstName;
+    private String _firstName;
 
     /**
      * 姓
      */
-    private String lastName;
+    private String _lastName;
 
     /**
      * メールアドレス
      */
-    private String mailAddress;
+    private String _mailAddress;
 
     /**
      * 更新日時
      */
-    private Date updateDateTime;
+    private Date _updateDateTime;
 
     /**
      * ユーザIDを取得します。
@@ -55,7 +55,7 @@ public class User {
      * @return ユーザID
      */
     public Integer getUserId() {
-        return this.userId;
+        return _userId;
     }
 
     /**
@@ -64,7 +64,7 @@ public class User {
      * @param userId ユーザID
      */
     public void setUserId(Integer userId) {
-        this.userId = userId;
+        _userId = userId;
     }
 
     /**
@@ -73,7 +73,7 @@ public class User {
      * @return ユーザ名
      */
     public String getUserName() {
-        return this.userName;
+        return _userName;
     }
 
     /**
@@ -82,7 +82,7 @@ public class User {
      * @param userName ユーザ名
      */
     public void setUserName(String userName) {
-        this.userName = userName;
+        _userName = userName;
     }
 
     /**
@@ -91,7 +91,7 @@ public class User {
      * @return パスワード
      */
     public String getPassword() {
-        return this.password;
+        return _password;
     }
 
     /**
@@ -100,7 +100,7 @@ public class User {
      * @param title パスワード
      */
     public void setPassword(String password) {
-        this.password = password;
+        _password = password;
     }
 
     /**
@@ -109,7 +109,7 @@ public class User {
      * @return パスワード有効期限
      */
     public Date getExpirationDate() {
-        return this.expirationDate;
+        return _expirationDate;
     }
 
     /**
@@ -118,7 +118,7 @@ public class User {
      * @param expirationDate パスワード有効期限
      */
     public void setExpirationDate(Date expirationDate) {
-        this.expirationDate = expirationDate;
+        _expirationDate = expirationDate;
     }
 
     /**
@@ -127,7 +127,7 @@ public class User {
      * @return 名
      */
     public String getFirstName() {
-        return this.firstName;
+        return _firstName;
     }
 
     /**
@@ -136,7 +136,7 @@ public class User {
      * @param firstName 名
      */
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        _firstName = firstName;
     }
 
     /**
@@ -145,7 +145,7 @@ public class User {
      * @return 姓
      */
     public String getLastName() {
-        return this.lastName;
+        return _lastName;
     }
 
     /**
@@ -154,7 +154,7 @@ public class User {
      * @param lastName 姓
      */
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        _lastName = lastName;
     }
 
     /**
@@ -163,7 +163,7 @@ public class User {
      * @return メールアドレス
      */
     public String getMailAddress() {
-        return this.mailAddress;
+        return _mailAddress;
     }
 
     /**
@@ -172,7 +172,7 @@ public class User {
      * @param mailAddress メールアドレス
      */
     public void setMailAddress(String mailAddress) {
-        this.mailAddress = mailAddress;
+        _mailAddress = mailAddress;
     }
 
     /**
@@ -181,7 +181,7 @@ public class User {
      * @return 更新日時
      */
     public Date getUpdateDateTime() {
-        return this.updateDateTime;
+        return _updateDateTime;
     }
 
     /**
@@ -190,6 +190,6 @@ public class User {
      * @param updateDateTime 更新日時
      */
     public void setUpdateDateTime(Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
+        _updateDateTime = updateDateTime;
     }
 }

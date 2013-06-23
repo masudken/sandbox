@@ -3,7 +3,7 @@ package jp.co.gfam.gits.integration.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import jp.co.gfam.gits.business.model.User;
+import jp.co.gfam.gits.integration.entity.User;
 
 /**
  * ユーザ情報へのアクセス機能を提供するインターフェースです。
@@ -19,5 +19,5 @@ public interface UserDao {
      * @return 課題のリスト
      * @throws {@code SQLException} SQL実行例外
      */
-    public List<User> search(UserCriteria criteria) throws SQLException;
+    public List<User> select(UserCriteria criteria) throws SQLException;
 }
