@@ -1,7 +1,8 @@
-package jp.co.gfam.gits.common.dto;
+package jp.co.gfam.gits.business.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * 課題一覧DTO

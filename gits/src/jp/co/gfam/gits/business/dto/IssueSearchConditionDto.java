@@ -1,4 +1,4 @@
-package jp.co.gfam.gits.common.dto;
+package jp.co.gfam.gits.business.dto;
 
 /**
  * このクラスは課題検索条件のデータトランスファーオブジェクトです。
@@ -13,9 +13,9 @@ public class IssueSearchConditionDto {
     private Integer _issueId;
 
     /**
-     * 課題種別
+     * 課題種別コード
      */
-    private String _issueType;
+    private String _issueTypeCode;
 
     /**
      * タイトル
@@ -23,14 +23,14 @@ public class IssueSearchConditionDto {
     private String _title;
 
     /**
-     * 起票者
+     * 起票者ID
      */
-    private String _registrant;
+    private Integer _registrantId;
 
     /**
-     * 担当者
+     * 担当者IDコード
      */
-    private String _representative;
+    private Integer _representativeId;
 
     /**
      * ステータス
@@ -56,21 +56,21 @@ public class IssueSearchConditionDto {
     }
 
     /**
-     * 課題種別を取得します。
+     * 課題種別コードを取得します。
      *
-     * @return 課題種別
+     * @return 課題種別コード
      */
-    public String getIssueType() {
-        return _issueType;
+    public String getIssueTypeCode() {
+        return _issueTypeCode;
     }
 
     /**
-     * 課題種別を設定します。
+     * 課題種別コードを設定します。
      *
-     * @param issueType 課題種別
+     * @param issueTypeCode 課題種別コード
      */
-    public void setIssueType(String issueType) {
-        _issueType = issueType;
+    public void setIssueTypeCode(String issueTypeCode) {
+        _issueTypeCode = issueTypeCode;
     }
 
     /**
@@ -92,39 +92,39 @@ public class IssueSearchConditionDto {
     }
 
     /**
-     * 起票者を取得します。
+     * 起票者IDを取得します。
      *
-     * @return 起票者
+     * @return 起票者ID
      */
-    public String getRegistrant() {
-        return _registrant;
+    public Integer getRegistrantId() {
+        return _registrantId;
     }
 
     /**
-     * 起票者を設定します。
+     * 起票者IDを設定します。
      *
-     * @param registrant 起票者
+     * @param registrantId 起票者ID
      */
-    public void setRegistrant(String registrant) {
-        _registrant = registrant;
+    public void setRegistrantId(Integer registrantId) {
+        _registrantId = registrantId;
     }
 
     /**
-     * 担当者を取得します。
+     * 担当者IDを取得します。
      *
-     * @return 担当者
+     * @return 担当者ID
      */
-    public String getRepresentative() {
-        return _representative;
+    public Integer getRepresentativeId() {
+        return _representativeId;
     }
 
     /**
-     * 担当者を設定します。
+     * 担当者IDを設定します。
      *
-     * @param representative 担当者
+     * @param representativeId 担当者ID
      */
-    public void setRepresentative(String representative) {
-        _representative = representative;
+    public void setRepresentativeId(Integer representativeId) {
+        _representativeId = representativeId;
     }
 
     /**

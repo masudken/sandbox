@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -11,19 +12,19 @@
 <body>
 <div id="login" align="center">
 <img src="image/spacer.gif" alt="" width="100%" height="50">
-  <form accept-charset="UTF-8" action="/gits/login" method="post">
+  <s:form accept-charset="UTF-8" action="auth" method="post" theme="simple">
     <table>
       <tr>
         <td align="left"><span class="logintitle">Gits</span></td>
       </tr>
       <tr>
         <td align="left">
-        <input id="userName" class="form1" name="userName" type="text" placeholder="ユーザ名" tabindex="1" />
-      </td>
+        <s:textfield id="userName" cssClass="form1" name="userName" placeholder="ユーザ名" tabindex="1" />
+        </td>
       </tr>
       <tr>
         <td align="left">
-        <input id="password" class="form1" name="password" type="password" placeholder="パスワード" tabindex="2" />
+        <s:password id="password" cssClass="form1" name="password" placeholder="パスワード" tabindex="2" />
         </td>
       </tr>
       <tr>
@@ -31,11 +32,11 @@
       </tr>
       <tr>
         <td align="left">
-        <input class="button1" type="submit" name="login" value="ログイン" tabindex="3" />
+        <s:submit id="loginButton" cssClass="button1" name="login" value="ログイン" type="button" tabindex="3" />
         </td>
       </tr>
     </table>
-  </form>
+  </s:form>
 </div>
 </body>
 </html>

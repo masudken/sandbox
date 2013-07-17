@@ -1,4 +1,4 @@
-package jp.co.gfam.gits.common.dto;
+package jp.co.gfam.gits.business.dto;
 
 import java.util.Date;
 

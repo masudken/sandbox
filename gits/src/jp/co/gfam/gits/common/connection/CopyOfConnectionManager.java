@@ -1,4 +1,4 @@
-package jp.co.gfam.gits.common.database;
+package jp.co.gfam.gits.common.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

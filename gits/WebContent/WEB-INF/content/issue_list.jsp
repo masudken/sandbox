@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +22,7 @@
         </tr>
     </table>
 </div>
-<header>
+</header>
 
 <div id="contents">
     <div><img src="image/spacer.gif" alt="" width="18" height="1"></div>
@@ -29,11 +30,13 @@
     <div><img src="image/spacer.gif" alt="" width="18" height="1"></div>
 
     <div class="table1">
-        <form method="POST" action="/gits/issue-search">
+        <s:form accept-charset="UTF-8" action="search" method="post" theme="simple">
         <table>
             <tr>
                 <td align="left">課題番号</td>
-                <td align="left"><input type="text" class="form2" name="issueId"></td>
+                <td align="left"><input type="text" class="form2" name="issueId">
+
+                </td>
             </tr>
             <tr>
                 <td align="left">課題種別</td>
@@ -98,7 +101,7 @@
                 <td align="left" colspan="2"><input class="button2" type="submit" value="検索"></td>
             </tr>
         </table>
-        </form>
+        </s:form>
     </div>
     <div><img src="image/spacer.gif" alt="" width="18" height="1"></div>
     <div class="bar">課題一覧</div>
@@ -111,7 +114,7 @@
     Copyright (C) GFAM Co.,Ltd. All rights reserved.
     </div>
 </div>
-<footer>
+</footer>
 
 </body>
 </html>

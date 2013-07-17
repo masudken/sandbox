@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.co.gfam.gits.common.context.ConnectionContext;
+import jp.co.gfam.gits.common.connection.ConnectionContext;
 import jp.co.gfam.gits.integration.entity.User;
 
 /**

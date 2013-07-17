@@ -2,11 +2,14 @@ package jp.co.gfam.gits.presantation.action;
 
 import java.sql.Connection;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Result;
+
 import jp.co.gfam.gits.business.core.IssueManagementService;
-import jp.co.gfam.gits.common.context.ConnectionContext;
-import jp.co.gfam.gits.common.database.ConnectionManager;
-import jp.co.gfam.gits.common.dto.IssueListDto;
-import jp.co.gfam.gits.common.dto.IssueSearchConditionDto;
+import jp.co.gfam.gits.business.dto.IssueListDto;
+import jp.co.gfam.gits.business.dto.IssueSearchConditionDto;
+import jp.co.gfam.gits.common.connection.ConnectionContext;
+import jp.co.gfam.gits.common.connection.ConnectionManager;
 
 /**
  * このクラスは課題検索用のアクションクラスです。
@@ -36,6 +39,8 @@ public class IssueSearchAction {
      * @return
      * @throws Exception
      */
+    @Action(value = "/search", results = { @Result(name = "success",
+            location = "issue_list.jsp") })
     public String execute() throws Exception {
 
         // TODO サービスにIntercepterを適用する形でトランザクション管理をしたい
@@ -43,6 +48,7 @@ public class IssueSearchAction {
         // コネクションの取得とトランザクションの開始
         Connection connection = ConnectionManager.getInstance()
                 .openConnection();
+        connection.setAutoCommit(false);
         ConnectionContext.getContext().SetConnection(connection);
 
         // 検索条件の生成
@@ -53,6 +59,7 @@ public class IssueSearchAction {
         IssueListDto listDto = _issueManagementService.searchIssues(condition);
 
         // トランザクションのコミット
+        connection.commit();
 
         // 画面遷移
         return "success";

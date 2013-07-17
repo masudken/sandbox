@@ -1,8 +1,8 @@
 package jp.co.gfam.gits.business.core;
 
-import jp.co.gfam.gits.common.dto.IssueDto;
-import jp.co.gfam.gits.common.dto.IssueListDto;
-import jp.co.gfam.gits.common.dto.IssueSearchConditionDto;
+import jp.co.gfam.gits.business.dto.IssueDto;
+import jp.co.gfam.gits.business.dto.IssueListDto;
+import jp.co.gfam.gits.business.dto.IssueSearchConditionDto;
 
 /**
  * このクラスは課題管理のサービスを提供します。

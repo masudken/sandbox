@@ -1,6 +1,5 @@
 package jp.co.gfam.gits.business.authentication;
 
-
 /**
  * この例外は、指定されたユーザのパスワードが不正な値の場合にスローされます。
  *

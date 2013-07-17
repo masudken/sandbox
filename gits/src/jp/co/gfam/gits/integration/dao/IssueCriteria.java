@@ -106,7 +106,7 @@ public class IssueCriteria {
      *
      * @param issueTypeCode 課題種別コード
      */
-    public void setIssueType(String issueTypeCode) {
+    public void setIssueTypeCode(String issueTypeCode) {
         _issueTypeCode = issueTypeCode;
     }
 

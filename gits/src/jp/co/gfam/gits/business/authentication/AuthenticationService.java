@@ -1,6 +1,5 @@
 package jp.co.gfam.gits.business.authentication;
 
-
 /**
  * このクラスは認証サービスを提供します。
  *
