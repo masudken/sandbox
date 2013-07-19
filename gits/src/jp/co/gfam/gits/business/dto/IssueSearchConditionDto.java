@@ -1,11 +1,18 @@
 package jp.co.gfam.gits.business.dto;
 
+import java.io.Serializable;
+
 /**
  * このクラスは課題検索条件のデータトランスファーオブジェクトです。
  *
  * @author Kenichi Masuda
  */
-public class IssueSearchConditionDto {
+public class IssueSearchConditionDto implements Serializable {
+
+    /**
+     * シリアライズ用バージョンID
+     */
+    private static final long serialVersionUID = -3322369183123195706L;
 
     /**
      * 課題番号
@@ -23,14 +30,14 @@ public class IssueSearchConditionDto {
     private String _title;
 
     /**
-     * 起票者ID
+     * 起票者
      */
-    private Integer _registrantId;
+    private String _registrant;
 
     /**
-     * 担当者IDコード
+     * 担当者
      */
-    private Integer _representativeId;
+    private String _representative;
 
     /**
      * ステータス
@@ -92,39 +99,39 @@ public class IssueSearchConditionDto {
     }
 
     /**
-     * 起票者IDを取得します。
+     * 起票者を取得します。
      *
-     * @return 起票者ID
+     * @return 起票者
      */
-    public Integer getRegistrantId() {
-        return _registrantId;
+    public String getRegistrant() {
+        return _registrant;
     }
 
     /**
-     * 起票者IDを設定します。
+     * 起票者を設定します。
      *
-     * @param registrantId 起票者ID
+     * @param registrant 起票者
      */
-    public void setRegistrantId(Integer registrantId) {
-        _registrantId = registrantId;
+    public void setRegistrant(String registrant) {
+        _registrant = registrant;
     }
 
     /**
-     * 担当者IDを取得します。
+     * 担当者を取得します。
      *
-     * @return 担当者ID
+     * @return 担当者
      */
-    public Integer getRepresentativeId() {
-        return _representativeId;
+    public String getRepresentative() {
+        return _representative;
     }
 
     /**
-     * 担当者IDを設定します。
+     * 担当者を設定します。
      *
-     * @param representativeId 担当者ID
+     * @param representativeId 担当者
      */
-    public void setRepresentativeId(Integer representativeId) {
-        _representativeId = representativeId;
+    public void setRepresentative(String representative) {
+        _representative = representative;
     }
 
     /**

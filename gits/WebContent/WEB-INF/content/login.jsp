@@ -11,29 +11,29 @@
 
 <body>
 <div id="login" align="center">
-<img src="image/spacer.gif" alt="" width="100%" height="50">
+  <img src="image/spacer.gif" alt="" width="100%" height="50">
   <s:form accept-charset="UTF-8" action="auth" method="post" theme="simple">
     <table>
       <tr>
-        <td align="left"><span class="logintitle">Gits</span></td>
+      <td align="left"><span class="logintitle">Gits</span></td>
       </tr>
       <tr>
-        <td align="left">
-        <s:textfield id="userName" cssClass="form1" name="userName" placeholder="ユーザ名" tabindex="1" />
-        </td>
+      <td align="left">
+      <s:textfield id="userName" cssClass="form1" name="userName" placeholder="ユーザ名" tabindex="1" />
+      </td>
       </tr>
       <tr>
-        <td align="left">
-        <s:password id="password" cssClass="form1" name="password" placeholder="パスワード" tabindex="2" />
-        </td>
+      <td align="left">
+      <s:password id="password" cssClass="form1" name="password" placeholder="パスワード" tabindex="2" />
+      </td>
       </tr>
       <tr>
-        <td><img src="image/spacer.gif" alt="" height="5"></td>
+      <td><img src="image/spacer.gif" alt="" height="5"></td>
       </tr>
       <tr>
-        <td align="left">
-        <s:submit id="loginButton" cssClass="button1" name="login" value="ログイン" type="button" tabindex="3" />
-        </td>
+      <td align="left">
+      <s:submit id="loginButton" cssClass="button1" name="login" value="ログイン" type="button" tabindex="3" />
+      </td>
       </tr>
     </table>
   </s:form>

@@ -1,6 +1,7 @@
 package jp.co.gfam.gits.business.core;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -59,13 +60,33 @@ public class IssueManagementServiceImpl implements IssueManagementService {
         Map<Integer, User> userMap = new HashMap<Integer, User>();
 
         try {
+            // ユーザの取得(全件)
+            List<User> userList = _userDao.select(new UserCriteria());
+
+            // ユーザID検索用マップ
+            Map<String, Integer> userIdMap = new HashMap<String, Integer>();
+            for (User user : userList) {
+                userIdMap.put(user.getLastName() + " " + user.getFirstName(),
+                        user.getUserId());
+            }
+
+            // 起票者と担当者のID取得
+            Integer registrantId = null;
+            if (condition.getRegistrant() != null) {
+                registrantId = userIdMap.get(condition.getRegistrant());
+            }
+            Integer representativeId = null;
+            if (condition.getRepresentative() != null) {
+                representativeId = userIdMap.get(condition.getRepresentative());
+            }
+
             // 検索条件の生成
             IssueCriteria criteria = new IssueCriteria();
             criteria.setIssueId(condition.getIssueId());
             criteria.setIssueTypeCode(condition.getIssueTypeCode());
             criteria.setTitle(condition.getTitle());
-            criteria.setRegistrantId(condition.getRegistrantId());
-            criteria.setRepresentativeId(condition.getRegistrantId());
+            criteria.setRegistrantId(registrantId);
+            criteria.setRepresentativeId(representativeId);
             criteria.setStatus(condition.getStatus());
 
             // 課題情報の取得
@@ -77,8 +98,7 @@ public class IssueManagementServiceImpl implements IssueManagementService {
                 issueTypeMap.put(issueType.getIssueTypeCode(), issueType);
             }
 
-            // ユーザの取得(全件)
-            List<User> userList = _userDao.select(new UserCriteria());
+            // ユーザのマップ
             for (User user : userList) {
                 userMap.put(user.getUserId(), user);
             }
@@ -94,7 +114,7 @@ public class IssueManagementServiceImpl implements IssueManagementService {
             IssueDto issueDto = new IssueDto();
             issueDto.setIssueId(issue.getIssueId());
             issueDto.setTitle(issue.getTitle());
-            issueDto.setDiscription(issue.getDiscription());
+            issueDto.setDescription(issue.getDescription());
             issueDto.setRegisterDate(issue.getRegisterDate());
             issueDto.setPriority(issue.getPriority());
             issueDto.setStartDate(issue.getStartDate());
@@ -122,7 +142,7 @@ public class IssueManagementServiceImpl implements IssueManagementService {
                 registrantDto.setUserName(registrant.getPassword());
                 registrantDto.setPassword(registrant.getPassword());
                 registrantDto.setExpirationDate(registrant.getExpirationDate());
-                registrantDto.setFullName(registrant.getLastName() + "　"
+                registrantDto.setFullName(registrant.getLastName() + " "
                         + registrant.getFirstName());
                 registrantDto.setMailAddress(registrant.getMailAddress());
                 issueDto.setRegistrant(registrantDto);
@@ -138,7 +158,7 @@ public class IssueManagementServiceImpl implements IssueManagementService {
                 representativeDto.setExpirationDate(representative
                         .getExpirationDate());
                 representativeDto.setFullName(representative.getLastName()
-                        + "　" + representative.getFirstName());
+                        + " " + representative.getFirstName());
                 representativeDto.setMailAddress(representative
                         .getMailAddress());
                 issueDto.setRepresentative(representativeDto);
@@ -158,26 +178,53 @@ public class IssueManagementServiceImpl implements IssueManagementService {
     @Override
     public void registerIssue(IssueDto issue) {
 
-        // DTOをエンティティへ変換
-        Issue issueEntity = new Issue();
-        issueEntity.setIssueId(issue.getIssueId());
-        issueEntity.setIssueTypeCode(issue.getIssueType().getIssueTypeCode());
-        issueEntity.setTitle(issue.getTitle());
-        issueEntity.setDiscription(issue.getDiscription());
-        issueEntity.setRegistrantId(issue.getRegistrant().getUserId());
-        issueEntity.setRegisterDate(issue.getRegisterdDate());
-        issueEntity.setRepresentativeId(issue.getRepresentative().getUserId());
-        issueEntity.setPriority(issue.getPriority());
-        issueEntity.setStartDate(issue.getStartDate());
-        issueEntity.setEndDate(issue.getEndDate());
-        issueEntity.setProgress(issue.getProgress());
-        issueEntity.setCost(issue.getCost());
-        issueEntity.setIssueId(issue.getIssueId());
-        issueEntity.setStatus(issue.getStatus());
-        issueEntity.setUpdateDateTime(issue.getUpdateDateTime());
+        Date systemDate = new Date();
 
-        // 登録実行
         try {
+            // ユーザの取得(全件)
+            List<User> userList = _userDao.select(new UserCriteria());
+
+            // ユーザID検索用マップ
+            Map<String, Integer> userIdMap = new HashMap<String, Integer>();
+            for (User user : userList) {
+                userIdMap.put(user.getLastName() + " " + user.getFirstName(),
+                        user.getUserId());
+            }
+
+            // DTOをエンティティへ変換
+            Issue issueEntity = new Issue();
+            issueEntity.setIssueTypeCode(issue.getIssueType()
+                    .getIssueTypeCode());
+            issueEntity.setTitle(issue.getTitle());
+            issueEntity.setDescription(issue.getDescription());
+            issueEntity.setPriority(issue.getPriority());
+            issueEntity.setStartDate(issue.getStartDate());
+            issueEntity.setEndDate(issue.getEndDate());
+            issueEntity.setProgress(issue.getProgress());
+            issueEntity.setCost(issue.getCost());
+            issueEntity.setStatus(issue.getStatus());
+
+            // 起票者と担当者のID取得
+            Integer registrantId = null;
+            if (issue.getRegistrant().getFullName() != null) {
+                registrantId = userIdMap.get(issue.getRegistrant()
+                        .getFullName());
+            }
+            Integer representativeId = null;
+            if (issue.getRepresentative().getFullName() != null) {
+                representativeId = userIdMap.get(issue.getRepresentative()
+                        .getFullName());
+            }
+            issueEntity.setRegistrantId(registrantId);
+            issueEntity.setRepresentativeId(representativeId);
+
+            // IDは自動採番
+            issueEntity.setIssueId(null);
+            // 登録日、更新日時はシステム日時
+            issueEntity.setRegisterDate(systemDate);
+            issueEntity.setUpdateDateTime(systemDate);
+
+            // 登録実行
             _issueDao.insert(issueEntity);
 
         } catch (SQLException sqle) {
@@ -199,7 +246,7 @@ public class IssueManagementServiceImpl implements IssueManagementService {
         issueEntity.setIssueId(issue.getIssueId());
         issueEntity.setIssueTypeCode(issue.getIssueType().getIssueTypeCode());
         issueEntity.setTitle(issue.getTitle());
-        issueEntity.setDiscription(issue.getDiscription());
+        issueEntity.setDescription(issue.getDescription());
         issueEntity.setRegistrantId(issue.getRegistrant().getUserId());
         issueEntity.setRegisterDate(issue.getRegisterdDate());
         issueEntity.setRepresentativeId(issue.getRepresentative().getUserId());

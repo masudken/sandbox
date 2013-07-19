@@ -1,11 +1,18 @@
 package jp.co.gfam.gits.business.dto;
 
+import java.io.Serializable;
+
 /**
  * このクラスはユーザ検索条件のデータトランスファーオブジェクトです。
  *
  * @author Kenichi Masuda
  */
-public class UserSearchConditionDto {
+public class UserSearchConditionDto implements Serializable {
+
+    /**
+     * シリアライズ用バージョンID
+     */
+    private static final long serialVersionUID = -8310588645133417502L;
 
     /**
      * ユーザID

@@ -1,19 +1,24 @@
 package jp.co.gfam.gits.business.dto;
 
+import java.io.Serializable;
 import java.util.Date;
-
 
 /**
  * このクラスは課題情報のデータトランスファーオブジェクトです。
  *
  * @author Kenichi Masuda
  */
-public class IssueDto {
+public class IssueDto implements Serializable {
+
+    /**
+     * シリアライズ用バージョンID
+     */
+    private static final long serialVersionUID = -5603817173206537578L;
 
     /**
      * 課題番号
      */
-    private int _issueId;
+    private Integer _issueId;
 
     /**
      * 課題種別
@@ -28,7 +33,7 @@ public class IssueDto {
     /**
      * 説明
      */
-    private String _discription;
+    private String _description;
 
     /**
      * 起票者
@@ -63,12 +68,12 @@ public class IssueDto {
     /**
      * 進捗
      */
-    private short _progress;
+    private Integer _progress;
 
     /**
      * 工数
      */
-    private short _cost;
+    private Integer _cost;
 
     /**
      * ステータス
@@ -85,7 +90,7 @@ public class IssueDto {
      *
      * @return 課題番号
      */
-    public int getIssueId() {
+    public Integer getIssueId() {
         return _issueId;
     }
 
@@ -94,7 +99,7 @@ public class IssueDto {
      *
      * @param issueId 課題番号
      */
-    public void setIssueId(int issueId) {
+    public void setIssueId(Integer issueId) {
         _issueId = issueId;
     }
 
@@ -139,17 +144,17 @@ public class IssueDto {
      *
      * @return 説明
      */
-    public String getDiscription() {
-        return _discription;
+    public String getDescription() {
+        return _description;
     }
 
     /**
      * 説明を設定します。
      *
-     * @param discription 説明
+     * @param description 説明
      */
-    public void setDiscription(String discription) {
-        _discription = discription;
+    public void setDescription(String description) {
+        _description = description;
     }
 
     /**
@@ -265,7 +270,7 @@ public class IssueDto {
      *
      * @return 進捗
      */
-    public short getProgress() {
+    public Integer getProgress() {
         return _progress;
     }
 
@@ -274,7 +279,7 @@ public class IssueDto {
      *
      * @param progress 進捗
      */
-    public void setProgress(short progress) {
+    public void setProgress(Integer progress) {
         _progress = progress;
     }
 
@@ -283,7 +288,7 @@ public class IssueDto {
      *
      * @return 工数
      */
-    public short getCost() {
+    public Integer getCost() {
         return _cost;
     }
 
@@ -292,7 +297,7 @@ public class IssueDto {
      *
      * @param cost 工数
      */
-    public void setCost(short cost) {
+    public void setCost(Integer cost) {
         _cost = cost;
     }
 

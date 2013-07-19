@@ -27,7 +27,7 @@ public class Issue {
     /**
      * 説明
      */
-    private String _discription;
+    private String _description;
 
     /**
      * 起票ID
@@ -62,12 +62,12 @@ public class Issue {
     /**
      * 進捗
      */
-    private Short _progress;
+    private Integer _progress;
 
     /**
      * 工数
      */
-    private Short _cost;
+    private Integer _cost;
 
     /**
      * ステータス
@@ -138,17 +138,17 @@ public class Issue {
      *
      * @return 説明
      */
-    public String getDiscription() {
-        return _discription;
+    public String getDescription() {
+        return _description;
     }
 
     /**
      * 説明を設定します。
      *
-     * @param discription 説明
+     * @param description 説明
      */
-    public void setDiscription(String discription) {
-        _discription = discription;
+    public void setDescription(String description) {
+        _description = description;
     }
 
     /**
@@ -264,7 +264,7 @@ public class Issue {
      *
      * @return 進捗
      */
-    public Short getProgress() {
+    public Integer getProgress() {
         return _progress;
     }
 
@@ -273,7 +273,7 @@ public class Issue {
      *
      * @param progress 進捗
      */
-    public void setProgress(Short progress) {
+    public void setProgress(Integer progress) {
         _progress = progress;
     }
 
@@ -282,7 +282,7 @@ public class Issue {
      *
      * @return 工数
      */
-    public Short getCost() {
+    public Integer getCost() {
         return _cost;
     }
 
@@ -291,7 +291,7 @@ public class Issue {
      *
      * @param cost 工数
      */
-    public void setCost(Short cost) {
+    public void setCost(Integer cost) {
         _cost = cost;
     }
 

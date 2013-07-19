@@ -1,5 +1,6 @@
 package jp.co.gfam.gits.business.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,12 @@ import java.util.Date;
  *
  * @author Kenichi Masuda
  */
-public class UserDto {
+public class UserDto implements Serializable {
+
+    /**
+     * シリアライズ用バージョンID
+     */
+    private static final long serialVersionUID = -2758437838382270883L;
 
     /**
      * ユーザID

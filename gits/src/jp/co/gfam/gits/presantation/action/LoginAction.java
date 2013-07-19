@@ -19,11 +19,12 @@ import jp.co.gfam.gits.common.connection.ConnectionManager;
  */
 public class LoginAction implements SessionAware {
 
-    // TODO 一旦インスタンスを直接生成
-    private AuthenticationService service = new AuthenticationServiceImpl();
+    /**
+     * 認証サービス
+     */
+    private AuthenticationService _service = new AuthenticationServiceImpl();
 
     private String _userName = null;
-
     private String _password = null;
 
     private String _message = null;
@@ -60,7 +61,7 @@ public class LoginAction implements SessionAware {
         ConnectionContext.getContext().SetConnection(connection);
 
         // サービスの実行
-        service.authenticate(_userName, _password);
+        _service.authenticate(_userName, _password);
 
         // トランザクションのコミット
         connection.commit();
@@ -70,7 +71,7 @@ public class LoginAction implements SessionAware {
     }
 
     public void setAuthenticationService(AuthenticationService service) {
-        this.service = service;
+        _service = service;
     }
 
     public void setUserName(String userName) {

@@ -28,9 +28,9 @@ public class IssueDaoImpl implements IssueDao {
     /**
      * SQLのINSERT文
      */
-    private static final String INSERT_STATEMENT = "insert into issue ('"
+    private static final String INSERT_STATEMENT = "insert into issue ("
             + " issue_type_code, title, description, registrant_id, register_date, representative_id,"
-            + " priority, start_date, end_date, progress, cost, status)"
+            + " priority, start_date, end_date, progress, cost, status, update_date_time )"
             + " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     /**
@@ -58,18 +58,20 @@ public class IssueDaoImpl implements IssueDao {
                 .prepareStatement(INSERT_STATEMENT)) {
 
             // SQLパラメータの設定
-            statement.setString(0, issue.getIssueTypeCode());
-            statement.setString(1, issue.getTitle());
-            statement.setString(2, issue.getDiscription());
-            statement.setString(3, issue.getIssueTypeCode());
-            statement.setInt(4, issue.getRepresentativeId());
+            statement.setString(1, issue.getIssueTypeCode());
+            statement.setString(2, issue.getTitle());
+            statement.setString(3, issue.getDescription());
+            statement.setInt(4, issue.getRegistrantId());
             statement.setDate(5, new Date(issue.getRegisterDate().getTime()));
             statement.setInt(6, issue.getRepresentativeId());
             statement.setString(7, issue.getPriority());
             statement.setDate(8, new Date(issue.getStartDate().getTime()));
             statement.setDate(9, new Date(issue.getEndDate().getTime()));
-            statement.setShort(10, issue.getProgress());
-            statement.setShort(11, issue.getCost());
+            statement.setInt(10, issue.getProgress());
+            statement.setInt(11, issue.getCost());
+            statement.setString(12, issue.getStatus());
+            statement.setTimestamp(13, new Timestamp(issue.getUpdateDateTime()
+                    .getTime()));
 
             // SQLの実行
             statement.executeUpdate();
@@ -95,7 +97,7 @@ public class IssueDaoImpl implements IssueDao {
             // SQLパラメータの設定
             statement.setString(0, issue.getIssueTypeCode());
             statement.setString(1, issue.getTitle());
-            statement.setString(2, issue.getDiscription());
+            statement.setString(2, issue.getDescription());
             statement.setString(3, issue.getIssueTypeCode());
             statement.setInt(4, issue.getRepresentativeId());
             statement.setDate(5, new Date(issue.getRegisterDate().getTime()));
@@ -103,8 +105,8 @@ public class IssueDaoImpl implements IssueDao {
             statement.setString(7, issue.getPriority());
             statement.setDate(8, new Date(issue.getStartDate().getTime()));
             statement.setDate(9, new Date(issue.getEndDate().getTime()));
-            statement.setShort(10, issue.getProgress());
-            statement.setShort(11, issue.getCost());
+            statement.setInt(10, issue.getProgress());
+            statement.setInt(11, issue.getCost());
             statement.setTimestamp(12, new Timestamp(issue.getUpdateDateTime()
                     .getTime()));
             statement.setInt(13, issue.getIssueId());
@@ -155,17 +157,17 @@ public class IssueDaoImpl implements IssueDao {
         issue.setIssueId(resultSet.getObject("issue_id", Integer.class));
         issue.setIssueTypeCode(resultSet.getString("issue_type_code"));
         issue.setTitle(resultSet.getString("title"));
-        issue.setDiscription(resultSet.getString("description"));
+        issue.setDescription(resultSet.getString("description"));
         issue.setRegistrantId(resultSet.getObject("registrant_id",
                 Integer.class));
         issue.setRegisterDate(resultSet.getDate("register_date"));
-        issue.setRegistrantId(resultSet.getObject("representative_id",
+        issue.setRepresentativeId(resultSet.getObject("representative_id",
                 Integer.class));
         issue.setPriority(resultSet.getString("priority"));
         issue.setStartDate(resultSet.getDate("start_date"));
         issue.setEndDate(resultSet.getDate("end_date"));
-        issue.setProgress(resultSet.getObject("progress", Short.class));
-        issue.setCost(resultSet.getObject("cost", Short.class));
+        issue.setProgress(resultSet.getObject("progress", Integer.class));
+        issue.setCost(resultSet.getObject("cost", Integer.class));
         issue.setStatus(resultSet.getString("status"));
         issue.setUpdateDateTime(resultSet.getTimestamp("update_date_time"));
         return issue;
@@ -204,20 +206,21 @@ public class IssueDaoImpl implements IssueDao {
                     + "'");
             statementCount++;
         }
-        // タイトル
+        // タイトル (部分一致)
         if (criteria.getTitle() != null) {
             if (statementCount != 0) {
                 builder.append(" and");
             }
-            builder.append(" title = '" + criteria.getTitle() + "'");
+            builder.append(" title like '%" + criteria.getTitle() + "%'");
             statementCount++;
         }
-        // 説明
+        // 説明 (部分一致)
         if (criteria.getDiscription() != null) {
             if (statementCount != 0) {
                 builder.append(" and");
             }
-            builder.append(" discription = '" + criteria.getDiscription() + "'");
+            builder.append(" discription like '%" + criteria.getDiscription()
+                    + "%'");
             statementCount++;
         }
         // 起票者ID

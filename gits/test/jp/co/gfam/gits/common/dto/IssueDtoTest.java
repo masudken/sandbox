@@ -1,6 +1,7 @@
 package jp.co.gfam.gits.common.dto;
 
 import static org.junit.Assert.*;
+import jp.co.gfam.gits.business.dto.IssueDto;
 
 import org.junit.Test;
 
@@ -17,9 +18,9 @@ public class IssueDtoTest {
 
         IssueDto issue = new IssueDto();
         issue.setIssueId(101);
-        issue.setIssueType("003");
+        issue.setIssueTypeCode("003");
         issue.setTitle("単体テスト実装");
-        issue.setDiscription("このテストメソッドはアクセサメソッドのテストです。");
+        issue.setDescription("このテストメソッドはアクセサメソッドのテストです。");
         issue.setRegistrantId(201);
 //        issue.setRegisterDate(registerDate);
         issue.setRepresentativeId(301);

@@ -1,16 +1,20 @@
 package jp.co.gfam.gits.business.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * ユーザ一覧DTO
  *
  * @author Kenichi Masuda
  */
-public class UserListDto {
+public class UserListDto implements Serializable {
 
+    /**
+     * シリアライズ用バージョンID
+     */
+    private static final long serialVersionUID = -383795297256408446L;
     /**
      * ユーザのリスト
      */

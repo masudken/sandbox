@@ -3,7 +3,7 @@ DROP TABLE issue;
 
 CREATE TABLE issue (
     issue_id                       INT NOT NULL AUTO_INCREMENT,
-    issue_type_id                  INT NOT NULL,
+    issue_type_code                CHAR(3) NOT NULL,
     title                          TINYTEXT NOT NULL,
     description                    TEXT,
     registrant_id                  INT NOT NULL,

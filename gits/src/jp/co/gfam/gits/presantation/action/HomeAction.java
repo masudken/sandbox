@@ -29,7 +29,7 @@ public class HomeAction implements SessionAware {
      * @throws Exception
      */
     @Action(value = "/home", results = { @Result(name = "success",
-            location = "issue_list.jsp") })
+            location = "home.jsp") })
     public String execute() throws Exception {
 
         // TODO プロキシ作って移動するか？

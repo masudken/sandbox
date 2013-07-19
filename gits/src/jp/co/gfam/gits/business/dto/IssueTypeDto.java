@@ -1,11 +1,18 @@
 package jp.co.gfam.gits.business.dto;
 
+import java.io.Serializable;
+
 /**
  * このクラスは課題種別情報のデータトランスファーオブジェクトです。
  *
  * @author Kenichi Masuda
  */
-public class IssueTypeDto {
+public class IssueTypeDto implements Serializable {
+
+    /**
+     * シリアライズ用バージョンID
+     */
+    private static final long serialVersionUID = -82050137626250290L;
 
     /**
      * 課題種別コード

@@ -1,16 +1,20 @@
 package jp.co.gfam.gits.business.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * 課題一覧DTO
  *
  * @author kenichi
  */
-public class IssueListDto {
+public class IssueListDto implements Serializable {
 
+    /**
+     * シリアライズ用バージョンID
+     */
+    private static final long serialVersionUID = 4236830827773037208L;
     /**
      * 課題一覧のリスト
      */

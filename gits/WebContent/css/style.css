@@ -190,12 +190,11 @@ a:hover {
     line-height:150%;
 }
 
-/*赤い太文字*/
-.text1 {
-    color:#C13407;
-    font-weight:bold;
+.message1 {
+    color:#ff275d;
     line-height:150%;
-    font-size:18px;
+    font-size:14px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 }
 
 .text2 {
