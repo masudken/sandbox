@@ -180,7 +180,7 @@ public class IssueDto implements Serializable {
      *
      * @return 起票日
      */
-    public Date getRegisterdDate() {
+    public Date getRegisterDate() {
         return _registerDate;
     }
 

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import jp.co.gfam.gits.business.SystemException;
+import jp.co.gfam.gits.common.crypto.CipherUtils;
 import jp.co.gfam.gits.integration.dao.UserCriteria;
 import jp.co.gfam.gits.integration.dao.UserDao;
 import jp.co.gfam.gits.integration.dao.UserDaoImpl;
@@ -54,11 +55,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         // 一意キーで検索するため、1件のみ取得される前提
         User user = users.get(0);
 
-        // TODO 取得したパスワードの復号化
-        // 未実装　一旦パスワードは平文としている。
+        // 取得したパスワードの復号化
+        String decryptPassword = CipherUtils.decrypt(user.getPassword());
 
         // パスワードが一致しない場合
-        if (!password.equals(user.getPassword())) {
+        if (!password.equals(decryptPassword)) {
             throw new BadPasswordException("パスワードが異なります。");
         }
 

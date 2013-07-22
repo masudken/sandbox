@@ -37,9 +37,9 @@ public class IssueDaoImpl implements IssueDao {
      * SQLのUPDATE文
      */
     private static final String UPDATE_STATEMENT = "update issue set"
-            + " issue_type_code = ?, title = ?, description = ?, registrant_id = ?,register_date = ?,"
+            + " issue_type_code = ?, title = ?, description = ?, registrant_id = ?,"
             + " representative_id = ?, priority = ?,start_date = ?, end_date =?,progress = ?,"
-            + " cost = ?,status = ? where issue_id = ?";
+            + " cost = ?,status = ?, update_date_time = ? where issue_id = ?";
 
     /*
      * (非 Javadoc)
@@ -95,18 +95,17 @@ public class IssueDaoImpl implements IssueDao {
                 .prepareStatement(UPDATE_STATEMENT)) {
 
             // SQLパラメータの設定
-            statement.setString(0, issue.getIssueTypeCode());
-            statement.setString(1, issue.getTitle());
-            statement.setString(2, issue.getDescription());
-            statement.setString(3, issue.getIssueTypeCode());
-            statement.setInt(4, issue.getRepresentativeId());
-            statement.setDate(5, new Date(issue.getRegisterDate().getTime()));
-            statement.setInt(6, issue.getRepresentativeId());
-            statement.setString(7, issue.getPriority());
-            statement.setDate(8, new Date(issue.getStartDate().getTime()));
-            statement.setDate(9, new Date(issue.getEndDate().getTime()));
-            statement.setInt(10, issue.getProgress());
-            statement.setInt(11, issue.getCost());
+            statement.setString(1, issue.getIssueTypeCode());
+            statement.setString(2, issue.getTitle());
+            statement.setString(3, issue.getDescription());
+            statement.setInt(4, issue.getRegistrantId());
+            statement.setInt(5, issue.getRepresentativeId());
+            statement.setString(6, issue.getPriority());
+            statement.setDate(7, new Date(issue.getStartDate().getTime()));
+            statement.setDate(8, new Date(issue.getEndDate().getTime()));
+            statement.setInt(9, issue.getProgress());
+            statement.setInt(10, issue.getCost());
+            statement.setString(11, issue.getStatus());
             statement.setTimestamp(12, new Timestamp(issue.getUpdateDateTime()
                     .getTime()));
             statement.setInt(13, issue.getIssueId());

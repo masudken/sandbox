@@ -4,35 +4,46 @@ import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
 /**
- * @author Kenichi Masuda
+ * このクラスはログアウト用のアクションクラスです。
  *
+ * @author Kenichi Masuda
  */
 public class LogoutAction implements SessionAware {
 
-    /*
-     * (非 Javadoc)
+    /**
+     * HTTPセッション
+     */
+    private Map<String, Object> _session = null;
+
+    /**
+     * HTTPセッションを設定します。
      *
-     * @see
-     * org.apache.struts2.interceptor.SessionAware#setSession(java.util.Map)
+     * @param session HTTPセッション
      */
     @Override
     public void setSession(Map<String, Object> session) {
-        // TODO 自動生成されたメソッド・スタブ
+        _session = session;
     }
 
     /**
-     * このアクションを実行します。
+     * ログアウトアクションを実行します。
      *
-     * @return
-     * @throws Exception
+     * @return 遷移先情報
+     * @throws Exception 何らかの例外が発生した場合
      */
     @Action(value = "/logout", results = { @Result(name = "success",
             location = "login.jsp") })
     public String execute() throws Exception {
-        // TODO セッション情報の破棄
+
+        // セッションを破棄
+        if (_session instanceof SessionMap) {
+            ((SessionMap<String, Object>) _session).invalidate();
+        }
+
         return "success";
     }
 }

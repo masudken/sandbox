@@ -1,7 +1,5 @@
 package jp.co.gfam.gits.integration.dao.impl;
 
-import static org.junit.Assert.*;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;

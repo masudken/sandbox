@@ -30,14 +30,7 @@
         <tr>
           <td align="left">課題種別</td>
           <td align="left">
-          <select class="selectbox1" name="issueType" size="1">
-            <option value=""></option>
-            <option value="010">不具合</option>
-            <option value="020">仕様変更</option>
-            <option value="030">障害</option>
-            <option value="040">調査</option>
-            <option value="050">問題</option>
-          </select>
+          <s:select name="issueType" cssClass= "selectbox1" list="issueTypeMap" size="1" emptyOption="true" />
           </td>
         </tr>
         <tr>
@@ -49,45 +42,19 @@
         <tr>
           <td align="left">ステータス</td>
           <td align="left">
-          <select class="selectbox1" name="status" size="1">
-            <option value=""></option>
-            <option value="01">起票</option>
-            <option value="02">対応中</option>
-            <option value="03">対応済</option>
-            <option value="09">ペンディング</option>
-          </select>
+          <s:select name="status" cssClass= "selectbox1" list="statusMap" size="1" emptyOption="true" />
           </td>
         </tr>
         <tr>
           <td align="left">起票者</td>
           <td align="left">
-          <select class="selectbox1" name="registrant" size="1">
-            <option value=""></option>
-            <option value="百田 夏菜子">百田 夏菜子</option>
-            <option value="玉井 詩織">玉井 詩織</option>
-            <option value="佐々木 彩夏">佐々木 彩夏</option>
-            <option value="有安 杏果">有安 杏果</option>
-            <option value="高城 れに">高城 れに</option>
-            <option value="早見 あかり">早見 あかり</option>
-          </select>
+          <s:select name="registrant" cssClass= "selectbox1" list="registrantMap" size="1" emptyOption="true" />
           </td>
         </tr>
         <tr>
           <td align="left">担当者</td>
           <td align="left">
-          <select class="selectbox1" name="representative" size="1">
-            <option value=""></option>
-            <option value="前田 敦子">前田 敦子</option>
-            <option value="大島 優子">大島 優子</option>
-            <option value="渡辺 麻友">渡辺 麻友</option>
-            <option value="柏木 由紀">柏木 由紀</option>
-            <option value="小嶋 陽菜">小嶋 陽菜</option>
-            <option value="高橋 みなみ">高橋 みなみ</option>
-            <option value="板野 友美">板野 友美</option>
-            <option value="指原 莉乃">指原 莉乃</option>
-            <option value="篠田 麻里子">篠田 麻里子</option>
-            <option value="島崎 遥香">島崎 遥香</option>
-          </select>
+          <s:select name="representative" cssClass= "selectbox1" list="representativeMap" size="1" emptyOption="true" />
           </td>
         </tr>
         <tr>
@@ -125,8 +92,8 @@
       <td width="2%"><input type="checkbox" name="check" value="true"></td>
       <td width="8%"><s:property value="issueId" /></td>
       <td width="8%"><s:property value="issueType.issueTypeName" /></td>
-      <td width="8%"><s:property value="status" /></td>
-      <td width="8%"><s:property value="priority" /></td>
+      <td width="8%"><s:property value="%{getHelper().convertStatus(status)}" /></td>
+      <td width="8%"><s:property value="%{getHelper().convertPriority(priority)}" /></td>
       <td width="34" class="left">
       <a href="/gits/detail?issueId=<s:property value="issueId" />"><s:property value="title" /></a>
       </td>
@@ -141,6 +108,6 @@
 
 </div>
 
-<jsp:include page="footer.jsp" />
+<!-- <jsp:include page="footer.jsp" /> -->
 </body>
 </html>

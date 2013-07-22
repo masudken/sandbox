@@ -17,7 +17,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="junit.extensions.eclipse.quick.mock.MOCKITO_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/kenichi/Documents/IT関連/Spring/spring-security-3.1.4.RELEASE/dist/spring-security-core-3.1.4.RELEASE.jar" sourcepath="C:/Users/kenichi/Documents/IT関連/Spring/spring-security-3.1.4.RELEASE/dist/spring-security-core-3.1.4.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/dbunit-2.4.9.jar" sourcepath="lib/dbunit-2.4.9-sources.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

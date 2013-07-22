@@ -8,12 +8,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Gits - GFAM Issue Tracking System</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="footerFixed.js"></script>
 </head>
 
 <body>
 <jsp:include page="header.jsp" />
 
 <div id="contents">
+
+  <s:if test="%{message != null && messageType == \"INFO\"}">
+  <div><img src="images/spacer.gif" alt="" width="18" height="1"></div>
+  <div class="message2"><s:property value="message" /></div>
+  </s:if>
+
+  <s:if test="%{dispMode == \"REGISTER\"}">
   <div><img src="images/spacer.gif" alt="" width="18" height="1"></div>
   <div class="bar">起票</div>
   <div><img src="images/spacer.gif" alt="" width="18" height="1"></div>
@@ -24,14 +32,7 @@
       <tr>
         <td align="left">課題種別</td>
         <td align="left">
-        <select class="selectbox1" name="issueType" size="1">
-          <option value=""></option>
-          <option value="010">不具合</option>
-          <option value="020">仕様変更</option>
-          <option value="030">障害</option>
-          <option value="040">調査</option>
-          <option value="050">問題</option>
-        </select>
+        <s:select name="issueType" cssClass= "selectbox1" list="issueTypeMap" size="1" emptyOption="true" />
         </td>
       </tr>
       <tr>
@@ -45,57 +46,25 @@
       <tr>
         <td align="left">ステータス</td>
         <td align="left">
-        <select class="selectbox1" name="status" size="1">
-          <option value=""></option>
-          <option value="01">起票</option>
-          <option value="02">対応中</option>
-          <option value="03">対応済</option>
-          <option value="09">ペンディング</option>
-        </select>
+        <s:select name="status" cssClass= "selectbox1" list="statusMap" size="1" emptyOption="true" />
         </td>
       </tr>
       <tr>
         <td align="left">優先度</td>
         <td align="left">
-        <select class="selectbox1" name="priority" size="1">
-          <option value=""></option>
-          <option value="1">低め</option>
-          <option value="2">通常</option>
-          <option value="3">高め</option>
-          <option value="4">緊急</option>
-        </select>
+        <s:select name="priority" cssClass= "selectbox1" list="priorityMap" size="1" emptyOption="true" />
         </td>
       </tr>
       <tr>
         <td align="left">起票者</td>
         <td align="left">
-          <select class="selectbox1" name="registrant" size="1">
-            <option value=""></option>
-            <option value="百田 夏菜子">百田 夏菜子</option>
-            <option value="玉井 詩織">玉井 詩織</option>
-            <option value="佐々木 彩夏">佐々木 彩夏</option>
-            <option value="有安 杏果">有安 杏果</option>
-            <option value="高城 れに">高城 れに</option>
-            <option value="早見 あかり">早見 あかり</option>
-          </select>
+        <s:select name="registrant" cssClass= "selectbox1" list="registrantMap" size="1" emptyOption="true" />
         </td>
       </tr>
       <tr>
         <td align="left">担当者</td>
         <td align="left">
-          <select class="selectbox1" name="representative" size="1">
-            <option value=""></option>
-            <option value="前田 敦子">前田 敦子</option>
-            <option value="大島 優子">大島 優子</option>
-            <option value="渡辺 麻友">渡辺 麻友</option>
-            <option value="柏木 由紀">柏木 由紀</option>
-            <option value="小嶋 陽菜">小嶋 陽菜</option>
-            <option value="高橋 みなみ">高橋 みなみ</option>
-            <option value="板野 友美">板野 友美</option>
-            <option value="指原 莉乃">指原 莉乃</option>
-            <option value="篠田 麻里子">篠田 麻里子</option>
-            <option value="島崎 遥香">島崎 遥香</option>
-          </select>
+        <s:select name="representative" cssClass= "selectbox1" list="representativeMap" size="1" emptyOption="true" />
         </td>
       </tr>
       <tr>
@@ -130,10 +99,10 @@
       </tr>
       </table>
     </s:form>
-    </div>
-  <div><img src="images/spacer.gif" alt="" width="18" height="1"></div>
+  </div>
+  </s:if>
 </div>
 
-<jsp:include page="footer.jsp" />
+<!-- <jsp:include page="footer.jsp" /> -->
 </body>
 </html>

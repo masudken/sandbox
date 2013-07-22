@@ -1,8 +1,11 @@
 package jp.co.gfam.gits.business.core;
 
+import java.util.List;
+
 import jp.co.gfam.gits.business.dto.IssueDto;
 import jp.co.gfam.gits.business.dto.IssueListDto;
 import jp.co.gfam.gits.business.dto.IssueSearchConditionDto;
+import jp.co.gfam.gits.business.dto.IssueTypeDto;
 
 /**
  * このクラスは課題管理のサービスを提供します。
@@ -18,6 +21,13 @@ public interface IssueManagementService {
      * @return 課題一覧
      */
     public IssueListDto searchIssues(IssueSearchConditionDto condition);
+
+    /**
+     * 課題種別を検索します。
+     *
+     * @return 課題一覧
+     */
+    public List<IssueTypeDto> searchIssueTypes();
 
     /**
      * 指定された課題を登録します。

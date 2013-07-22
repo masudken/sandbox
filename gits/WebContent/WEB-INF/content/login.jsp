@@ -17,6 +17,13 @@
       <tr>
       <td align="left"><span class="logintitle">Gits</span></td>
       </tr>
+
+      <s:if test="%{message != null && messageType == \"ERROR\"}">
+      <tr>
+      <td align="left"><span class="message1"><s:property value="message" /></span></td>
+      </tr>
+      </s:if>
+
       <tr>
       <td align="left">
       <s:textfield id="userName" cssClass="form1" name="userName" placeholder="ユーザ名" tabindex="1" />

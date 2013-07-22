@@ -1,6 +1,7 @@
 package jp.co.gfam.gits.business.core;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -171,6 +172,33 @@ public class IssueManagementServiceImpl implements IssueManagementService {
     }
 
     /**
+     * 課題種別を検索します。
+     *
+     * @return 課題一覧
+     */
+    public List<IssueTypeDto> searchIssueTypes() {
+
+        List<IssueTypeDto> results = new ArrayList<IssueTypeDto>();
+
+        List<IssueType> issueTypes = null;
+        try {
+            issueTypes = _issueTypeDao.selectAll();
+        } catch (SQLException sqle) {
+            // SQL実行例外はシステム例外へ変換
+            new SystemException(sqle.getMessage());
+        }
+
+        for (IssueType issueType : issueTypes) {
+            IssueTypeDto issueTypeDto = new IssueTypeDto();
+            issueTypeDto.setIssueTypeCode(issueType.getIssueTypeCode());
+            issueTypeDto.setIssueTypeName(issueType.getIssueTypeName());
+            results.add(issueTypeDto);
+        }
+
+        return results;
+    }
+
+    /**
      * 指定された課題を登録します。
      *
      * @param issue 課題
@@ -241,26 +269,56 @@ public class IssueManagementServiceImpl implements IssueManagementService {
     @Override
     public void updateIssue(IssueDto issue) {
 
-        // DTOをエンティティへ変換
-        Issue issueEntity = new Issue();
-        issueEntity.setIssueId(issue.getIssueId());
-        issueEntity.setIssueTypeCode(issue.getIssueType().getIssueTypeCode());
-        issueEntity.setTitle(issue.getTitle());
-        issueEntity.setDescription(issue.getDescription());
-        issueEntity.setRegistrantId(issue.getRegistrant().getUserId());
-        issueEntity.setRegisterDate(issue.getRegisterdDate());
-        issueEntity.setRepresentativeId(issue.getRepresentative().getUserId());
-        issueEntity.setPriority(issue.getPriority());
-        issueEntity.setStartDate(issue.getStartDate());
-        issueEntity.setEndDate(issue.getEndDate());
-        issueEntity.setProgress(issue.getProgress());
-        issueEntity.setCost(issue.getCost());
-        issueEntity.setIssueId(issue.getIssueId());
-        issueEntity.setStatus(issue.getStatus());
-        issueEntity.setUpdateDateTime(issue.getUpdateDateTime());
+        Date systemDate = new Date();
 
-        // 更新実行
         try {
+            // ユーザの取得(全件)
+            List<User> userList = _userDao.select(new UserCriteria());
+
+            // ユーザID検索用マップ
+            Map<String, Integer> userIdMap = new HashMap<String, Integer>();
+            for (User user : userList) {
+                userIdMap.put(user.getLastName() + " " + user.getFirstName(),
+                        user.getUserId());
+            }
+
+            // DTOをエンティティへ変換
+            Issue issueEntity = new Issue();
+            issueEntity.setIssueId(issue.getIssueId());
+            issueEntity.setIssueTypeCode(issue.getIssueType()
+                    .getIssueTypeCode());
+            issueEntity.setTitle(issue.getTitle());
+            issueEntity.setDescription(issue.getDescription());
+            issueEntity.setRegisterDate(issue.getRegisterDate());
+            issueEntity.setPriority(issue.getPriority());
+            issueEntity.setStartDate(issue.getStartDate());
+            issueEntity.setEndDate(issue.getEndDate());
+            issueEntity.setProgress(issue.getProgress());
+            issueEntity.setCost(issue.getCost());
+            issueEntity.setIssueId(issue.getIssueId());
+            issueEntity.setStatus(issue.getStatus());
+            issueEntity.setUpdateDateTime(issue.getUpdateDateTime());
+
+            // 起票者と担当者のID取得
+            Integer registrantId = null;
+            if (issue.getRegistrant().getFullName() != null) {
+                registrantId = userIdMap.get(issue.getRegistrant()
+                        .getFullName());
+            }
+            Integer representativeId = null;
+            if (issue.getRepresentative().getFullName() != null) {
+                representativeId = userIdMap.get(issue.getRepresentative()
+                        .getFullName());
+            }
+            issueEntity.setRegistrantId(registrantId);
+            issueEntity.setRepresentativeId(representativeId);
+
+            // 登録日は更新なし
+            issueEntity.setRegisterDate(null);
+            // 更新日時はシステム日時
+            issueEntity.setUpdateDateTime(systemDate);
+
+            // 更新実行
             _issueDao.update(issueEntity);
 
         } catch (SQLException sqle) {
